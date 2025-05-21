@@ -1,0 +1,9 @@
+﻿в Programm.cs:
+string conn = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySql(
+        conn,
+        new MySqlServerVersion(new Version(8, 0, 36))
+        ));
+
+var app = builder.Build();

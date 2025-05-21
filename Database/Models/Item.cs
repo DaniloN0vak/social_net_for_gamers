@@ -1,0 +1,24 @@
+﻿namespace Diplomwork.Database.Models
+{
+    public class Item
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string? Description { get; set; }
+        public string? ImageUrl {  get; set; }
+        public double Price { get; set; }
+        public bool IsListed {  get; set; }
+        public DateTime CreatedAt { get; set; }
+        public short CurrencyId {  get; set; }
+        public Currency Currency { get; set; }
+        public int OwnerId {  get; set; }
+        public User Owner {  get; set; }
+        public virtual List<Order> Orders { get; set; }
+        public Item()
+        {
+            this.CreatedAt = DateTime.Now;
+            this.IsListed = false;
+            this.Orders = new List<Order>();
+        }
+    }
+}
