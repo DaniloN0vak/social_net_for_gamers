@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Diplomarbeit\\Backend\\Diplomwork\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\data\\configuration\\imageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\data\\configuration\\imageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\data\\configuration\\itemconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\data\\configuration\\itemconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\database\\data\\configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\database\\data\\configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 53,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Models\\Item.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Item.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Models\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:07:43.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ItemConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\ItemConfiguration.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Data\\Configuration\\ItemConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\ItemConfiguration.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Data\\Configuration\\ItemConfiguration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:05:52.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAqwDUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:01:52.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\AccountConfiguration.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Data\\Configuration\\AccountConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\AccountConfiguration.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Data\\Configuration\\AccountConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T20:00:01.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImageConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\ImageConfiguration.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Data\\Configuration\\ImageConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Data\\Configuration\\ImageConfiguration.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Data\\Configuration\\ImageConfiguration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:59:56.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Message.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Models\\Message.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Message.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Models\\Message.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA2wBUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:59:08.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Image.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Image.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Database\\Models\\Image.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Database\\Models\\Image.cs",
+              "RelativeToolTip": "Diplomwork\\Database\\Models\\Image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:58:08.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Program.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
+              "RelativeToolTip": "Diplomwork\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T18:39:18.307Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 98,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

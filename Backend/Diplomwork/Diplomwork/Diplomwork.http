@@ -1,0 +1,6 @@
+@Diplomwork_HostAddress = http://localhost:5167
+
+GET {{Diplomwork_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
