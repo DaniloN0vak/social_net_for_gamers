@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Regular.ttf') format('ttf');
+    font-style: normal;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 12px 0;
+    color: #2C2F36;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid #2C2F36;
+}
+
+.text {
+    margin: 0 12px;
+    white-space: nowrap;
+    font-size: 16px;
+    font-family: 'Raleway' sans-serif;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: #ADADBD;
+    font-weight: 400;
+}
