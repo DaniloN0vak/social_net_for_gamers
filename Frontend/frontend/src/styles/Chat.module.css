@@ -123,9 +123,8 @@ body {
     justify-content: center;
     background-color: #262629;
     max-height: 200px;
-    /* padding: 10px 0; */
-    box-sizing: border-box;
     min-height: 100px;
+    box-sizing: border-box;
 }
 
 .messageForm {
@@ -138,8 +137,7 @@ body {
     min-width: fit-content;
     max-height: 150px;
     min-height: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .messageInput {
