@@ -12,4 +12,5 @@
 
 .mainRight {
     align-items: flex-end;
+    padding-right: calc(20% - 4px);
 }
