@@ -43,7 +43,7 @@ export function formatRelativeDateTime(dateParameter) {
 }
 
 
-export function isNewDay(prevDate, currentDate) {
+export function checkNewDay(prevDate, currentDate) {
     return (
         prevDate.getFullYear() !== currentDate.getFullYear() ||
         prevDate.getMonth() !== currentDate.getMonth() ||
