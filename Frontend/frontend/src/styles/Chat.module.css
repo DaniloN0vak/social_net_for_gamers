@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Regular.ttf') format('ttf');
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #262629;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    z-index: 100;
+    margin-top: -100px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.headerItem {
+    height: 100px;
+    background-color: #212124;
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0 20px;
+    padding-top: 0;
+    box-sizing: border-box;
+    width: 75.26%;
+    transition: margin-top 0.3s ease-in-out;
+}
+
+.visible {
+    margin-top: 100px;
+}
+
+
+.info {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    align-items: center;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.descr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: auto 0;
+}
+
+.name {
+    color: #F6F6F6;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.event {
+    color: #ADADBD;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.images {
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.images img {
+    cursor: pointer;
+}
+
+.messageInputContainer {
+    position: sticky;
+    z-index: 100;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #262629;
+    max-height: 200px;
+    /* padding: 10px 0; */
+    box-sizing: border-box;
+    min-height: 100px;
+}
+
+.messageForm {
+    width: 60%;
+    background-color: #2C2F36;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    box-sizing: border-box;
+    min-width: fit-content;
+    max-height: 150px;
+    min-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.messageInput {
+    flex-grow: 1;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    color: #ADADBD;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin-right: 20px;
+    resize: none;
+    overflow-y: auto;
+    box-sizing: border-box;
+    max-height: 130px;
+    height: auto;
+    padding: 0;
+}
+
+.messageInput::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.messageImages {
+    display: flex;
+    gap: 20px;
+    flex-grow: 0;
+    width: fit-content;
+}
+
+.messageImages button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
