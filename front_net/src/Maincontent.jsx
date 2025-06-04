@@ -103,10 +103,10 @@ const MainContent = () => (
                 <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
             </button>
             <button style={buttonStyle_pm}>
-                <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
+                <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-13-39.jpg?updatedAt=1749032038149" alt="icon"/>
             </button>
             <button style={buttonStyle_pm}>
-                <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
+                <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-07-12.jpg?updatedAt=1749032038129" alt="icon"/>
             </button>
             <button style={buttonStyle_pm}>
                 <img style={imgStyle_pmbutton} src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
@@ -138,8 +138,8 @@ const MainContent = () => (
             alignItems: 'center',
             color: '#fff'
         }}>
-            <h1>Вітаємо у соціальній мережі для геймерів!</h1>
-            <p>Тут буде основний контент сторінки. Ви можете додати пости, стрічку новин, профілі, тощо.</p>
+            <h1 className='raleway-font'>WW!</h1>
+            <p className='raleway-font'>Попстар, папмпкін, нігадяй</p>
             <div style={{
                 marginTop: 32,
                 background: '#23272f',
@@ -148,8 +148,8 @@ const MainContent = () => (
                 minWidth: 400,
                 textAlign: 'center'
             }}>
-                <h2>Перший пост</h2>
-                <p>Це приклад посту. Додавайте власний контент!</p>
+                <h2 className='raleway-font'>Перший пост</h2>
+                <p className='raleway-font'>1</p>
             </div>
         </main>
 
@@ -158,7 +158,9 @@ const MainContent = () => (
             <button style={buttonStyle_cmt}>
                 <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-05-09_14-02-52.jpg?updatedAt=1748938849868" alt="icon" />
             </button>
-            <button style={buttonStyle_cmt}></button>
+            <button style={buttonStyle_cmt}>
+                <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg" alt="icon" />
+            </button>
             <button style={buttonStyle_cmt}></button>
             <button style={buttonStyle_cmt}></button>
         </aside>

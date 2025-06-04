@@ -18,6 +18,8 @@
       border-color: #007BFF;
     }
 
+    
+
     .search-bar .search-icon {
       position: absolute;
       right: 12px;
@@ -28,3 +30,10 @@
       pointer-events: none;
       opacity: 0.6;
     }
+
+.raleway-font {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+}
