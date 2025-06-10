@@ -1,4 +1,11 @@
 import React from 'react';
+import ChatIcon from './icons/ChatIcon';
+import ContactsIcon from './icons/ContactsIcon';
+import SavedIcon from './icons/SavedIcon';
+import StoreIcon from './icons/StoreIcon';
+import NotificationIcon from './icons/NotificationIcon';
+import PostCard from './PostCard';
+
 // бокові панелі
 const sidebarStyle = {
     width: 125,
@@ -14,6 +21,9 @@ const sidebarStyle = {
 const rightSidebarStyle = {
     ...sidebarStyle,
     borderRight: 'none',
+    alignItems: 'center',
+    gap: 12, // менший відступ між кнопками
+    paddingTop: 24, // відступ зверху
 };
 // Стилі основних кнопок
 const buttonStyle_cmt = {
@@ -21,12 +31,14 @@ const buttonStyle_cmt = {
     color: '#fff',
     border: 'none',
     borderRadius: 8,
-    padding: '10px 18px',
+    padding: 0, // прибираємо зайвий padding
     fontSize: 15,
     cursor: 'pointer',
     width: 52,
     height: 52,
-    radius: 10,
+    display: 'flex', // додаємо flex для центрування
+    alignItems: 'center',
+    justifyContent: 'center',
     transition: 'background 0.2s'
 };
 
@@ -95,7 +107,7 @@ const MainContent = () => (
         background: '#23272f'
     }}>
         {/* Лівий бар */}
-        <aside style={sidebarStyle}>
+        <aside style={sidebarStyle}> 
             <button style={buttonStyle_cmt}>
                 <img style={imgStyle_main} src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="icon"/>
             </button>
@@ -138,8 +150,6 @@ const MainContent = () => (
             alignItems: 'center',
             color: '#fff'
         }}>
-            <h1 className='raleway-font'>WW!</h1>
-            <p className='raleway-font'>Попстар, папмпкін, нігадяй</p>
             <div style={{
                 marginTop: 32,
                 background: '#23272f',
@@ -148,23 +158,67 @@ const MainContent = () => (
                 minWidth: 400,
                 textAlign: 'center'
             }}>
-                <h2 className='raleway-font'>Перший пост</h2>
-                <p className='raleway-font'>1</p>
+                <PostCard
+                    username="Nігадяй"
+                    dateTime="1944-06-04 13:52"
+                    text="Служив у військовому відомстві Імперського міністерства закордонних справ. 
+                    У червні 1933 року вступив у НСДАП. 
+                    Після Французької кампанії з серпня 1940 року очолював управління радіо і пропаганди в складі німецького посольства в Парижі,
+                     в 1942 році отримав ранг посланника. Переконаний нацист.
+                     З 26 липня 1943 року — імперський уповноважений в Італії; з 9 листопада 1943 року — посол при республіці Сало. "
+                    tags={['рейх', 'канцлер', 'привіт']}
+                    images={[
+                        "https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg",
+                    ]}
+                    stats={{ likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }} />
+
+                    <PostCard
+                    username="Папмпкін"
+                    dateTime="2025-06-04 13:00"
+                    text="Це мій перший пост на цій платформі!"
+                    tags={['перший', 'пост', 'привіт']}
+                    images={[
+                        "https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg",
+                        "https://ik.imagekit.io/ufzr7vwbk/photo_2025-05-09_14-02-52.jpg?updatedAt=1748938849868"
+                    ]}
+                    stats={{ likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }} />
             </div>
         </main>
 
         {/* Правий бар */}
         <aside style={rightSidebarStyle}>
-            <button style={buttonStyle_cmt}>
-                <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-05-09_14-02-52.jpg?updatedAt=1748938849868" alt="icon" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', alignItems: 'center' }}>
+        <button style={buttonStyle_cmt}>
+            <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-05-09_14-02-52.jpg?updatedAt=1748938849868" alt="icon" />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg" alt="icon" />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <ChatIcon />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <ContactsIcon />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <SavedIcon />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <StoreIcon />
+        </button>
+        <button style={buttonStyle_cmt}>
+            <NotificationIcon />
+        </button>
+    </div>
+            <button
+                style={{ ...buttonStyle_cmt, marginTop: 'auto', marginBottom: 8 }}
+                onClick={() => alert('Help is on the way!')}
+            >
+                <p className='raleway-font' style={{ color: '#fff', fontSize: 36, margin: 0 }}>?</p>
             </button>
-            <button style={buttonStyle_cmt}>
-                <img style={imgStyle_rgt_main} src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg" alt="icon" />
-            </button>
-            <button style={buttonStyle_cmt}></button>
-            <button style={buttonStyle_cmt}></button>
         </aside>
     </div>
+            
 );
 
 export default MainContent;

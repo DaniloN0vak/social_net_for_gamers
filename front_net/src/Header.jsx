@@ -56,7 +56,7 @@ const Header = () => {
                         type="text"
                         placeholder="Пошук"
                         style={{
-                            padding: '8px 36px 8px 12px', 
+                            padding: '8px 36px 8px 12px', // залишаємо, цього достатньо
                             borderRadius: 24,
                             border: '1px solid #353a45',
                             font: 'italic 15px Arial, sans-serif',
@@ -64,7 +64,7 @@ const Header = () => {
                             color: '#fff',
                             fontSize: 15,
                             outline: 'none',
-                            width: 200,
+                            width: 250,
                         }}
                     />
                     <svg
@@ -72,13 +72,13 @@ const Header = () => {
                         height="18"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#fff435"
+                        stroke="#ADADBD"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         style={{
                             position: 'absolute',
-                            right: -5,
+                            right: -10, 
                             top: '50%',
                             transform: 'translateY(-50%)',
                             pointerEvents: 'none'
