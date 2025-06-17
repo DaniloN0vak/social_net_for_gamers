@@ -1,0 +1,93 @@
+/* === Sidebar === */
+.sidebar {
+  width: 125px;
+  background: #212124;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: calc(100vh - 64px); /* Висота Header */
+}
+
+.sidebar-right {
+  border-right: none;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+/* === Кнопки === */
+.button-cmt {
+  background: #262629;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  font-size: 15px;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.button-pm {
+  background: #262629;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 0;
+  font-size: 15px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  transition: background 0.2s;
+}
+
+.button-group {
+  background: #262629;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 15px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  transition: background 0.2s;
+}
+
+/* === Зображення === */
+.img-pm-button {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-main {
+  width: 31px;
+  height: 31px;
+  margin-left: -10px;
+  object-fit: cover;
+}
+
+.img-rgt-main {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  margin-left: -18px;
+  margin-top: -10px;
+  object-fit: cover;
+}
+
+.img-group {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  margin-left: -10px;
+  object-fit: cover;
+}

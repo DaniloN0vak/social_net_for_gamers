@@ -1,10 +1,12 @@
 import React from 'react';
 import './index.css'; 
+import { Link } from 'react-router-dom';
 
-const navButtons = [
-    { label: 'Головна', key: 'home' },
-    { label: 'Відстежуванні', key: 'following' },
-    { label: 'Сторінки', key: 'pages' },
+
+const navLinks = [
+    { label: 'Головна', key: '/' },
+    { label: 'Відстежуванні', key: '/followed' },
+    { label: 'Сторінки', key: '/pages' },
     { label: 'Новини', key: 'news' },
     { label: 'Спільноти', key: 'communities' },
 ];
@@ -31,26 +33,29 @@ const Header = () => {
                 justifyContent: 'center',
             }}>
                 <nav style={{ display: 'flex', gap: 24 }}>
-                    {navButtons.map(btn => (
-                        <button
-                            key={btn.key}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#fff',
-                                fontSize: 16,
-                                cursor: 'pointer',
-                                padding: '8px 12px',
-                                borderRadius: 6,
-                                transition: 'background 0.2s',
-                            }}
-                            onMouseOver={e => e.currentTarget.style.color = '#5a7ad1'}
-                            onMouseOut={e => e.currentTarget.style.color = '#fff'}
-                        >
-                            {btn.label}
-                        </button>
-                    ))}
-                </nav>
+            {navLinks.map(link => (
+                <Link
+                key={link.key}
+                to={link.key}
+                style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#fff',
+                    fontSize: 16,
+                    cursor: 'pointer',
+                    padding: '8px 12px',
+                    borderRadius: 6,
+                    transition: 'background 0.2s',
+                    textDecoration: 'none',
+                    display: 'inline-block'
+                }}
+                onMouseOver={e => e.currentTarget.style.color = '#5a7ad1'}
+                onMouseOut={e => e.currentTarget.style.color = '#fff'}
+                >
+                {link.label}
+                </Link>
+            ))}
+            </nav>
                 <div style={{ marginLeft: 32, position: 'relative', width: 220 }}>
                     <input
                         type="text"
