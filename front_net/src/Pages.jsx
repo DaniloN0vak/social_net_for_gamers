@@ -1,4 +1,6 @@
 import React from 'react';
+import "./sidebar.css"; // Імпортуємо CSS файл
+import './index.css'; // Імпортуємо CSS файл для стилів
 
 
 const pagesData = [
@@ -18,18 +20,21 @@ const pagesData = [
 ];
 
 const PageCard = ({ name, followers, official }) => (
-  <div className="bg-gray-200 rounded-xl p-4 mb-6">
-    <div className="h-40 bg-gray-300 rounded-md mb-4" /> {/* Обкладинка */}
-    <div className="flex justify-between text-sm text-gray-600 px-1">
-      <span>{official && '⚪ Офіційна сторінка'}</span>
-      <span>Слідкують: {followers}</span>
-      <span>{name}</span>
-    </div>
-  </div>
+  
+        <div className="bg-gray-200 rounded-xl p-4 mb-6">
+          <div className="h-40 bg-gray-300 rounded-md mb-4" /> {/* Обкладинка */}
+          <div className="flex justify-between text-sm text-gray-600 px-1">
+            <span>{official && '⚪ Офіційна сторінка'}</span>
+            <span>Слідкують: {followers}</span>
+            <span>{name}</span>
+          </div>
+        </div>
+  
 );
 
 export default function Pages() {
   return (
+    
     <div className="max-w-3xl mx-auto p-4">
       {pagesData.map((page) => (
         <PageCard
