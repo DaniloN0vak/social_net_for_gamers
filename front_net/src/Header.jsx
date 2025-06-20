@@ -7,8 +7,8 @@ const navLinks = [
     { label: 'Головна', key: '/' },
     { label: 'Відстежуванні', key: '/followed' },
     { label: 'Сторінки', key: '/pages' },
-    { label: 'Новини', key: 'news' },
-    { label: 'Спільноти', key: 'communities' },
+    { label: 'Новини', key: '/news' },
+    { label: 'Спільноти', key: '/communities' },
 ];
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
                     textDecoration: 'none',
                     display: 'inline-block'
                 }}
-                onMouseOver={e => e.currentTarget.style.color = '#5a7ad1'}
+                onMouseOver={e => e.currentTarget.style.color = '#1AAAF5'}
                 onMouseOut={e => e.currentTarget.style.color = '#fff'}
                 >
                 {link.label}

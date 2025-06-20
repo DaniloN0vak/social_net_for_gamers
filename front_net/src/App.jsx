@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FollowedPage from './FollowedPage';
 import Pages from './Pages.jsx';
 import MainLayout from './MainLayout.jsx';
+import NewsPage from "./NewsPage.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/followed" element={<FollowedPage />} />
           <Route path="/pages" element={<Pages />} />
+          <Route path="/news" element={<NewsPage></NewsPage>} />
         </Route>
 
       </Routes>

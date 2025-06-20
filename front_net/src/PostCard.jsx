@@ -7,7 +7,8 @@ const PostCard = ({
   dateTime,
   text,
   tags,
-  images,
+  images = [],
+  videos = [],
   stats: { likes, comments, views, shares, saves },
   avatar
 }) => {
@@ -145,7 +146,27 @@ const PostCard = ({
           ))
         )}
         </div>
+  
       )}
+      
+      {videos.length > 0 && (
+  <div className="mb-4 flex flex-col gap-4">
+    {videos.map((src, i) => (
+      <video
+        key={i}
+        src={src}
+        controls
+        style={{
+          width: '100%',
+          height: '300px',
+          objectFit: 'cover',
+          borderRadius: '12px',
+          backgroundColor: '#000'
+        }}
+      />
+    ))}
+  </div>
+)}
 
       {/* Stats */}
             <div className="flex items-center justify-between text-gray-500 text-sm">
