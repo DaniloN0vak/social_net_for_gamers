@@ -5,6 +5,7 @@ import FollowedPage from './FollowedPage';
 import Pages from './Pages.jsx';
 import MainLayout from './MainLayout.jsx';
 import NewsPage from "./NewsPage.jsx";
+import CommunityPage from "./CommunityPage.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/followed" element={<FollowedPage />} />
           <Route path="/pages" element={<Pages />} />
           <Route path="/news" element={<NewsPage></NewsPage>} />
+          <Route path="/communities" element={<CommunityPage />} />
         </Route>
 
       </Routes>

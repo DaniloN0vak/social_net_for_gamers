@@ -11,7 +11,7 @@ const newsPosts = [
     username: "MSI",
     dateTime: "2025-06-20 10:33",
     text: "На підході Ryzen 5 9600X3D з технологією 3D V‑Cache AMD офіційно підтвердила роботу над процесором. Точні характеристики новинки поки невідомі, але очікується, що він отримає 6 ядер/12 потоків з архітектурою Zen 5 та сумарно 96 МБ кеш-пам’яті третього рівня.",
-    tags: ['MSI', 'Ryzen', '9600X3D'],
+    tags: ['MSI', 'Ryzen', 'News'],
     images: [
       "https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-21_00-30-56.jpg?updatedAt=1750455150975",
     ],
@@ -32,7 +32,7 @@ const newsPosts = [
     username: "Русланчік",
     dateTime: "2026-06-04 13:00",
     text: "Це мій перший пост на цій платформі!",
-    tags: ['перший', 'пост', 'привіт'],
+    tags: ['News', 'пост', 'привіт'],
     videos: [video1],
     stats: { likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }
   },

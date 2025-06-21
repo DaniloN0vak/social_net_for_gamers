@@ -1,9 +1,4 @@
-import React from 'react';
-import ChatIcon from './icons/ChatIcon';
-import ContactsIcon from './icons/ContactsIcon';
-import SavedIcon from './icons/SavedIcon';
-import StoreIcon from './icons/StoreIcon';
-import NotificationIcon from './icons/NotificationIcon';
+import React from 'react';   
 import PostCard from './PostCard';
 
 
