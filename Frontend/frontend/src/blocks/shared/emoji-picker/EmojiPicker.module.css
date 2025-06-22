@@ -1,0 +1,124 @@
+.container {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    padding-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    height: var(--height);
+    overflow: auto;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.groupContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.emojiSection::-webkit-scrollbar {
+    width: 4px;
+}
+
+.emojiSection::-webkit-scrollbar-track {
+    background-color: #2C2F36;
+    border-radius: 20px;
+}
+
+.emojiSection::-webkit-scrollbar-thumb {
+    background-color: #33373F;
+    border-radius: 20px;
+}
+
+.emojiSection::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.emojiSection::-webkit-scrollbar-button {
+    display: none;
+}
+
+.emoji {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    height: fit-content;
+}
+
+.emoji div {
+    width: 27px;
+    height: 27px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+.emoji div img {
+    height: auto;
+    width: auto;
+}
+
+.emoji span {
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.emoji:hover div {
+    background-color: #555;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+.emojiSection {
+    width: 100%;
+    overflow-y: auto;
+    height: var(--height);
+    padding-top: 10px;
+}
+
+.nav button {
+    height: 60px;
+}
+
+
+.virtuoso::-webkit-scrollbar {
+    width: 4px;
+    margin-right: 20px;
+}
+
+.virtuoso::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.virtuoso::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #33373F;
+}
+
+.virtuoso::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.virtuoso::-webkit-scrollbar-button {
+    display: none;
+}

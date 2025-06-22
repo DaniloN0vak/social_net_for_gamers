@@ -1,0 +1,35 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #262629;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.visible {
+    margin-top: 100px;
+}
+
+
+
+
+
+
+
+

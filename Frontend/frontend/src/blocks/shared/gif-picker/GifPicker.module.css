@@ -1,0 +1,163 @@
+.container {
+    background-color: #2C2F36;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    padding-top: 0%;
+    padding-right: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    height: var(--height);
+    overflow: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #2C2F36;
+    height: 60px;
+    width: 100%;
+    gap: 18px;
+    align-items: center;
+}
+
+.headerImages {
+    display: flex;
+    gap: 18px;
+    width: fit-content;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headerImages img {
+    width: auto;
+    cursor: pointer;
+}
+
+.inputContainer {
+    display: flex;
+    flex: 1;
+    background-color: #33373F;
+    border-radius: 20px;
+    height: 30px;
+    align-items: center;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: transparent;
+    color: #ADADBD;
+    font-family: "Raleway", sans-serif;
+}
+
+.searchInput::placeholder {
+    font-style: italic;
+}
+
+.searchInput:focus {
+    border: none;
+    outline: none;
+}
+
+.inputImages {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.inputImages img:nth-child(1) {
+    height: 18px;
+    width: auto;
+    cursor: pointer;
+}
+
+.inputImages img:nth-last-child(1) {
+    height: 16px;
+    width: auto;
+    cursor: pointer;
+}
+
+.gifGrid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.gifButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.gifImage {
+    width: 117px;
+    height: 117px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #2C2F36;
+    border-radius: 20px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #33373F;
+    border-radius: 20px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.container::-webkit-scrollbar-button {
+    display: none;
+}
+
+.gifWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.gifWrapper:hover .saveIcon {
+    display: block;
+}
+
+.saveIcon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    z-index: 9;
+    display: none;
+}
+
+.saveIcon:hover {
+    opacity: 1;
+}

@@ -1,0 +1,40 @@
+.audioPlayer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.playButton {
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.playButton img {
+    height: 21px;
+}
+
+.progressBar {
+    flex: 1;
+    height: 8px;
+    background-color: #ADADBD;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress {
+    height: 100%;
+    background-color: #262629;
+    transition: width 0.3s;
+    width: 0;
+}
+
+.play {
+    height: 25px !important;
+}
