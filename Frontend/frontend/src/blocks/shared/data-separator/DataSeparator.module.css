@@ -1,0 +1,17 @@
+
+.separator {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid var(--line-color);
+}
+
+.text {
+    white-space: nowrap;
+}

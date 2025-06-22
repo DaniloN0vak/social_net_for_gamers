@@ -1,8 +1,5 @@
-import Message from './components/Message';
-import DateSeparator from './components/DateSeparator';
-import MessageGroupList from './components/MessageGroupList';
-import Chat from './components/Chat';
-
+import Chat from './blocks/chat-items/main/components/Chat';
+import { ModalProvider } from './contexts/ModalContext';
 // const messages = [
 //   {
 //     id: 'm1',
@@ -93,7 +90,7 @@ const messages = [
   },
   {
     id: 'm2',
-    content: 'Як справи?',
+    // content: 'Як справи?',
     sentAt: new Date(2025, 4, 18, 9, 32),
     isEdited: false,
     isRead: true,
@@ -153,6 +150,15 @@ const messages = [
     isEdited: false,
     isRead: true,
     media: ['https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
       'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg',
 
       'https://img.freepik.com/photos-gratuite/beau-cameleon-dans-nature_23-2151731208.jpg'],
@@ -240,9 +246,9 @@ function App() {
   let isLeft = true;
 
   return (
-    <>
+    <ModalProvider>
       <Chat messages={messages} currentUser={{ id: 2 }} companion={companion}></Chat>
-    </>
+    </ModalProvider>
   );
 }
 

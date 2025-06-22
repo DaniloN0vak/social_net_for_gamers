@@ -1,0 +1,58 @@
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+.controls button {
+    width: 46px;
+    height: 46px;
+    background: #33373F;
+}
+
+.controls button:hover {
+    background-color: #455a64 !important;
+}
+
+.sent {
+    border: 1px solid #1AAAF580 !important;
+}
+
+.stop, .play{
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.stop img {
+    width: auto;
+    height: 16px;
+}
+
+.play img {
+    width: auto;
+    height: 17px;
+}
+
+.addButtons{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap:5px;
+}
+
+.mainButtons{
+    display: flex;
+    gap:5px;
+}
+
+.pause{
+    height: 21px !important;
+}

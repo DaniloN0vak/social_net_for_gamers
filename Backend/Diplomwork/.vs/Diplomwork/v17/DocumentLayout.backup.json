@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Diplomarbeit\\Backend\\Diplomwork\\",
+  "WorkspaceRootPath": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\backend\\diplomwork\\diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,9 +17,22 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 245,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 53,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\ChatService.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\ChatService.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowGkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T12:52:26.262Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -27,20 +44,20 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
-              "RelativeDocumentMoniker": "Diplomwork\\Program.cs",
-              "ToolTip": "D:\\Diplomarbeit\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
-              "RelativeToolTip": "Diplomwork\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Controllers\\ChatController.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Diplomwork\\Controllers\\ChatController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:39:18.307Z",
+              "WhenOpened": "2025-06-17T21:32:56.546Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 12,
+          "DockedWidth": 204,
           "SelectedChildIndex": -1,
           "Children": [
             {

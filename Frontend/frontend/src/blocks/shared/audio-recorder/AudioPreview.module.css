@@ -1,0 +1,35 @@
+.preview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.buttons button {
+
+    width: 46px;
+    height: 46px;
+    background: #33373F;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(2) {
+    border: 1px solid #1AAAF580 !important;
+}
+
+.buttons button:hover {
+    background-color: #455a64;
+}
+
+.customAudioPlayer{
+    width: 200px;
+    height: 50px;
+}
