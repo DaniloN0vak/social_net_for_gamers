@@ -1,6 +1,22 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
+import api from './api/api.js';
 
+const NewsPage = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    api.get('/posts').then((res) => setPosts(res.data));
+  }, []);
+
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      {posts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
+    </div>
+  );
+};
 
 const PostCard = ({
   username,

@@ -1,7 +1,8 @@
 import React from 'react';
 import PostCard from './PostCard';
-import './index.css'; // Імпортуємо CSS файл для стилів
+import './index.css'; 
 import video1 from './assets/IMG_6791.MP4';
+
 
 
 
