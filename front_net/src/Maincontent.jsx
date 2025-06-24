@@ -1,9 +1,11 @@
 import React from 'react';
 import PostCard from './PostCard';
+import CreatePost from './CreatePost.jsx';
 import './index.css'; // Імпортуємо CSS файл для стилів
 
 
 const MainContent = () => (
+    
     <div style={{
         display: 'flex',
         minHeight: 'calc(100vh - 64px)',
@@ -53,6 +55,10 @@ const MainContent = () => (
                     stats={{ likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }} />
             </div>
         </main>
+   {/* <div className="p-4">
+      <CreatePost />
+      {/* посткард 
+    </div> */}
 </div>
             
 );

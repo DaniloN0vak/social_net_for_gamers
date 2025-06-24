@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 import PostCard from './PostCard';
 import './index.css'; 
 import video1 from './assets/IMG_6791.MP4';
-
-
+import { useEffect, useState } from 'react';
+import api from './api/api.js';
 
 
 const newsPosts = [
@@ -54,8 +54,17 @@ export default function NewsPage() {
   // Розділяємо пости на дві колонки
   const left = newsPosts.filter((_, i) => i % 2 === 0);
   const right = newsPosts.filter((_, i) => i % 2 !== 0);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    api.get('/posts').then((res) => setPosts(res.data));
+  }, []);
 
   return (
+    <div>
+      {posts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
     <div style={{
       display: 'flex',
       minHeight: 'calc(100vh - 64px)',
@@ -83,5 +92,6 @@ export default function NewsPage() {
         </div>
       </main>
     </div>
+  </div>
   );
 }
