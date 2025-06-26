@@ -2,6 +2,7 @@
 {
     public class MessageDto
     {
+        public long Id { get; set; }
         public string Content { get; set; }
         public DateTime SentAt { get; set; }
         public bool IsEdited { get; set; }

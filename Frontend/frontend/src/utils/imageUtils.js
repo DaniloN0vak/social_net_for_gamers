@@ -1,19 +1,22 @@
-export async function sortImageUrlsByAspectRatio(urls) {
+const serverUrl = process.env.REACT_APP_API_URL;
+
+export async function sortImageUrlsByAspectRatio(media) {
   const loadedImages = await Promise.all(
-    urls.map(src =>
+    media.map(medium =>
       new Promise((resolve) => {
         const img = new Image();
-        img.src = src;
+        img.src = serverUrl + medium.src;
 
         img.onload = () => resolve({
-          src,
+          src: serverUrl + medium.src,
           width: img.naturalWidth,
           height: img.naturalHeight,
           ratio: img.naturalWidth / img.naturalHeight,
+          isBloored: medium.isBloored
         });
 
         img.onerror = () => {
-          console.warn(`Ошибка загрузки изображения: ${src}`);
+          console.warn(`Ошибка загрузки изображения: ${serverUrl + medium.src}`);
           resolve(null);
         };
       })

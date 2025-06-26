@@ -1,38 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MessageGroupList from '../../../message-items/message-list/components/MessageGroupList';
 import styles from '../styles/Chat.module.css';
-import { send } from '../../../../hooks/apiService';
+import { send, getChatById } from '../../../../hooks/apiService';
 import Header from '../../header/components/Header';
 import MessageInputContainer from '../../footer/components/MessageInputContainer';
+import useChatWebSocket from './useChatWebSocket';
 
 function Chat({ chatId }) {
-
-
-    // const [chat, setChat] = useState(null);
-
-    // useEffect(() => {
-    //     const loadData = async () => {
-    //         try {
-    //             const res = await getChat(chatId);
-    //             setChat(res.data);
-    //         } catch (err) {
-    //             console.error('Error loading data', err);
-    //         }
-    //     };
-
-    //     loadData();
-    // }, [chatId]);
-
-
-    // const { messages, currentUser, companion } = chat;
+    const currentUserId = 1;
+    const [chat, setChat] = useState({
+        messages: [],
+        companions: [],
+        isGroup: false
+    });
     const [files, setFiles] = useState([]);
     const [message, setMessage] = useState('');
     const [gif, setGif] = useState('');
     const [audioChunks, setAudio] = useState(null);
+    const [err, setErr] = useState("");
 
-    const selectGif = (gifSrc) => {
-        setGif(gifSrc);
-    }
+    const handleNewMessage = useCallback((newMsg) => {
+        setChat(prev => {
+            if (!prev || !prev.messages) return prev;
+            return {
+                ...prev,
+                messages: [...prev.messages, newMsg],
+            };
+        });
+    }, []);
+
+    useChatWebSocket(chatId, handleNewMessage);
 
     useEffect(() => {
         if (gif) {
@@ -40,11 +37,43 @@ function Chat({ chatId }) {
         }
     }, [gif]);
 
+    useEffect(() => {
+        if (audioChunks && audioChunks.file) {
+            handleOnSubmit();
+        }
+    }, [audioChunks]);
+
+
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const data = await getChatById(chatId);
+                setChat(data);
+                setErr("");
+            } catch (err) {
+                console.error('Error loading data', err);
+                setErr("Нема підключення");
+            }
+        };
+
+        loadData();
+    }, [chatId]);
+
+    const { messages, companions } = chat;
+
+    let companion = null;
+    if (!chat.isGroup) {
+        companion = companions.find(x => x.id !== currentUserId);
+    }
+
+    const selectGif = (gifSrc) => {
+        setGif(gifSrc);
+    };
+
     const handleOnSubmit = async (e) => {
         if (e) e.preventDefault();
-        console.log(gif);
         try {
-            const response = await send(1, 1, message, files, audioChunks, gif);
+            const response = await send(chatId, currentUserId, message, files, audioChunks, gif);
             setMessage('');
             setAudio(null);
             setFiles([]);
@@ -54,17 +83,18 @@ function Chat({ chatId }) {
         }
     };
 
-    useEffect(() => {
-        if (audioChunks && audioChunks.file) {
-            handleOnSubmit();
-        }
-    }, [audioChunks]);
-
     return (
         <div className={styles.container}>
-
-            <Header companion={{ firstName: 'allo', lastName: 'allo', event: 'hello' }} />
-            <MessageGroupList messages={[]} currentUserId={1} />
+            {chat.isGroup ? (
+                <Header />
+            ) : (
+                <Header
+                    logoSrc={companion?.avatar}
+                    name={companion ? companion.firstName + ' ' + companion.lastName : ''}
+                    additional={err === "" ? (companion?.state || '') : err}
+                />
+            )}
+            <MessageGroupList messages={messages} currentUserId={currentUserId} />
             <MessageInputContainer
                 filesControl={{ files, setFiles }}
                 messageControl={{ message, setMessage }}
@@ -73,8 +103,8 @@ function Chat({ chatId }) {
                 onSubmit={handleOnSubmit}
             />
         </div>
-        
     );
 }
+
 
 export default React.memo(Chat);

@@ -1,6 +1,6 @@
 .controls {
     display: flex;
-    gap: 12px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -50,7 +50,7 @@
 
 .mainButtons{
     display: flex;
-    gap:5px;
+    gap:20px;
 }
 
 .pause{

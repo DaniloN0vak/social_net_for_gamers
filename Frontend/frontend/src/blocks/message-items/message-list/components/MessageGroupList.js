@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { Virtuoso } from 'react-virtuoso';
+import React, { useMemo, useRef, useEffect } from 'react';
+import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 import MessageGroup from '../../message-group/components/MessageGroup';
 import DataSeparator from '../../../shared/data-separator/DataSeparator';
 import { formatDateForSeparator, checkNewDay } from '../../../../utils/dateUtils';
@@ -26,6 +26,8 @@ const separatorStyles = {
 };
 
 function MessageGroupList({ messages, currentUserId }) {
+    const virtuosoRef = useRef(null);
+
     const renderedItems = useMemo(() => {
         const result = [];
         let group = [];
@@ -58,9 +60,19 @@ function MessageGroupList({ messages, currentUserId }) {
         return result;
     }, [messages, currentUserId]);
 
+    // useEffect(() => {
+    //     if (virtuosoRef.current && renderedItems.length > 0) {
+    //         virtuosoRef.current.scrollToIndex({
+    //             index: renderedItems.length - 1,
+    //             behavior: 'smooth',
+    //         });
+    //     }
+    // }, [renderedItems]);
+
     return (
         <div className={styles.container}>
             <Virtuoso
+                ref={virtuosoRef}
                 data={renderedItems}
                 className={styles.myScrollContainer}
                 style={{ height: '100%' }}
@@ -85,8 +97,7 @@ function MessageGroupList({ messages, currentUserId }) {
 
                     return null;
                 }}
-                followOutput="smooth"
-                initialTopMostItemIndex={renderedItems.length - 1}
+                followOutput="always"
             />
         </div>
     );

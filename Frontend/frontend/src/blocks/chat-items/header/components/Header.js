@@ -2,9 +2,8 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/Header.module.css';
 import HeaderItem from './HeaderItem';
-import { useModal } from '../../../../contexts/ModalContext';
 
-const Header = ({ companion }) => {
+const Header = ({ logoSrc, name, additional }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isAttached, setIsAttached] = useState(true);
     const timeoutRef = useRef(null);
@@ -24,21 +23,21 @@ const Header = ({ companion }) => {
         setIsAttached(prev => !prev);
     }, []);
 
-    const { isModalOpen } = useModal();
-
     useEffect(() => {
         return () => clearTimeout(timeoutRef.current);
     }, []);
 
     return (
         <header
-            className={`${styles.header} ${isModalOpen ? styles.hidden : ''}`}
+            className={styles.header}
             onMouseEnter={!isAttached ? handleMouseEnter : undefined}
             onMouseLeave={!isAttached ? handleMouseLeave : undefined}
         >
             <HeaderItem
                 handleAttachClick={handleAttachClick}
-                companion={companion}
+                logoSrc={logoSrc}
+                name={name}
+                additional={additional}
                 isAttached={isAttached}
                 isHovered={isHovered}
             />

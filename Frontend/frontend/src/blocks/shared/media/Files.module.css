@@ -1,0 +1,40 @@
+.filesBlock {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+    color: #ADADBD;
+}
+
+.fileBlock {
+    position: relative;
+    background: #2C2F36;
+    padding: 15px;
+    border-radius: 20px;
+    font-family: 'Inter' sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+
+.fileBlock span {
+    opacity: 0.7;
+}
+
+.btn{
+    width: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn img{
+    width: 100%;
+    height: auto;
+}

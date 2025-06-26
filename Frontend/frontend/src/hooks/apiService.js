@@ -1,4 +1,4 @@
-import { sendMessage } from "../api/chatApi";
+import { sendMessage, getChat } from "../api/chatApi";
 
 async function gifToFile(src) {
   try {
@@ -12,15 +12,21 @@ async function gifToFile(src) {
 }
 
 export async function send(chatId, userId, content = "", media = [], audio = null, gifUrl = "") {
+  if(content == "" && media.length == 0 && audio == null && gifUrl == "") return;
+  
+
+
   const formData = new FormData();
   formData.append("content", content);
   formData.append("userId", userId);
 
   media.forEach((item, index) => {
+    console.log(item);
     formData.append(`media[${index}].file`, item.file);
     formData.append(`media[${index}].isBloored`, item.isBloored);
     formData.append(`media[${index}].name`, item.name);
     formData.append(`media[${index}].type`, item.type);
+    formData.append(`media[${index}].size`, item.size);
   });
 
   if (audio) {
@@ -29,6 +35,7 @@ export async function send(chatId, userId, content = "", media = [], audio = nul
     formData.append(`media[${index}].isBloored`, false);
     formData.append(`media[${index}].name`, audio.name);
     formData.append(`media[${index}].type`, audio.type);
+    formData.append(`media[${index}].size`, audio.size);
   }
 
 
@@ -42,9 +49,10 @@ export async function send(chatId, userId, content = "", media = [], audio = nul
       formData.append(`media[${index}].isBloored`, false);
       formData.append(`media[${index}].name`, gifFile.name);
       formData.append(`media[${index}].type`, gifFile.type);
+      formData.append(`media[${index}].size`, gifFile.size);
     }
   }
-  
+
 
 
   try {
@@ -52,6 +60,17 @@ export async function send(chatId, userId, content = "", media = [], audio = nul
     return response.data;
   } catch (error) {
     console.error("Ошибка при отправке сообщения:", error);
+    throw error;
+  }
+}
+
+export async function getChatById(chatId) {
+  try {
+    const response = await getChat(chatId);
+    return response.data;
+  }
+  catch (error) {
+    console.error("Ошибка при получении:", error);
     throw error;
   }
 }

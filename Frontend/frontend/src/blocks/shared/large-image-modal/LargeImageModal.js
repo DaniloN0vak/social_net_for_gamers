@@ -2,16 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styles from './LargeImageModel.module.css';
 import arrowRight from '../../../assets/images/chat-big-image/arrow-right.png';
 import arrowLeft from '../../../assets/images/chat-big-image/arrow-left.png';
-import { useModal } from '../../../contexts/ModalContext';
+import { createPortal } from 'react-dom';
 
 const LargeImageModal = ({ src, onClose, images, currentIndex, setCurrentIndex }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const { setIsModalOpen } = useModal();
 
-  useEffect(() => {
-    setIsModalOpen(true);
-    return () => setIsModalOpen(false);
-  }, [setIsModalOpen]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -43,7 +38,7 @@ const LargeImageModal = ({ src, onClose, images, currentIndex, setCurrentIndex }
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentIndex, images.length, goPrev, goNext, handleClose]);
 
-  return (
+  return createPortal(
     <div
       role="dialog"               
       aria-modal="true"          
@@ -78,7 +73,8 @@ const LargeImageModal = ({ src, onClose, images, currentIndex, setCurrentIndex }
           <img src={arrowRight} alt="Следующее" />
         </button>
       )}
-    </div>
+    </div>,
+    document.body
   );
 };
 

@@ -15,7 +15,8 @@ function FilePicker({ onFileSelect }) {
                 src: URL.createObjectURL(file),
                 type: file.type,
                 name: file.name,
-                file: file
+                file: file,
+                size: file.size
             }));
             onFileSelect(fileItems);
         }
@@ -34,7 +35,8 @@ function FilePicker({ onFileSelect }) {
                 src: URL.createObjectURL(file),
                 type: file.type,
                 name: file.name,
-                file: file
+                file: file,
+                size: file.size
             }));
             onFileSelect(fileItems);
         }
