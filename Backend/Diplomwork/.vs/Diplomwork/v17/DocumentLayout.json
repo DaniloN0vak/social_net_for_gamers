@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\dto\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\dto\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\dto\\mediumdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\dto\\mediumdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|d:\\diplomarbeit\\project\\backend\\diplomwork\\diplomwork\\models\\databasemodels\\tables\\medium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CBF5330-5FC7-4E24-8F1D-FD44A6ACD34B}|Diplomwork\\Diplomwork.csproj|solutionrelative:diplomwork\\models\\databasemodels\\tables\\medium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,19 +45,6 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatService.cs",
-              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
-              "RelativeDocumentMoniker": "Diplomwork\\Models\\ChatService.cs",
-              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
-              "RelativeToolTip": "Diplomwork\\Models\\ChatService.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowGkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T12:52:26.262Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
@@ -43,16 +54,101 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\UserDto.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\DTO\\UserDto.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\UserDto.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\DTO\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T14:45:56.322Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Program.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Program.cs",
+              "RelativeToolTip": "Diplomwork\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T14:41:09.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\ChatHub.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatHub.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\ChatHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T14:37:53.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Medium.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DatabaseModels\\Tables\\Medium.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\DatabaseModels\\Tables\\Medium.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DatabaseModels\\Tables\\Medium.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\DatabaseModels\\Tables\\Medium.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:28:45.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MediumDto.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\MediumDto.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\DTO\\MediumDto.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\MediumDto.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\DTO\\MediumDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:27:58.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MessageDto.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\MessageDto.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\DTO\\MessageDto.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\DTO\\MessageDto.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\DTO\\MessageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T21:01:42.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
+              "RelativeDocumentMoniker": "Diplomwork\\Models\\ChatService.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Models\\ChatService.cs",
+              "RelativeToolTip": "Diplomwork\\Models\\ChatService.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAswJoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T12:52:26.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ChatController.cs",
               "DocumentMoniker": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Diplomwork\\Controllers\\ChatController.cs",
               "ToolTip": "D:\\Diplomarbeit\\Project\\Backend\\Diplomwork\\Diplomwork\\Controllers\\ChatController.cs",
               "RelativeToolTip": "Diplomwork\\Controllers\\ChatController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T21:32:56.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T21:32:56.546Z"
             }
           ]
         },

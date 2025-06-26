@@ -12,6 +12,11 @@ export default function FilePickerContainer({ filesControl, messageControl, back
     const filePanelRef = useRef(null);
     const [isFilePanelOpen, setIsFilePanelOpen] = useState(false);
 
+    const handleOnSubmit = () => {
+        setIsFilePanelOpen(false);
+        onSubmit();
+    }
+
     useOutsideClick(filePanelRef, () => setIsFilePanelOpen(false), isFilePanelOpen);
 
     const handleFileClick = useCallback(() => {
@@ -44,7 +49,7 @@ export default function FilePickerContainer({ filesControl, messageControl, back
                 </ModalChatContainer>
             )}
 
-            {(isFilePanelOpen && files.length > 0) && <FilePreviewArea backColor={backColor} filesControl={filesControl} onClose={handleOnClose} onFileSelect={handleFileSelect} messageControl={messageControl} onSubmit={onSubmit}/>}
+            {(isFilePanelOpen && files.length > 0) && <FilePreviewArea backColor={backColor} filesControl={filesControl} onClose={handleOnClose} onFileSelect={handleFileSelect} messageControl={messageControl} onSubmit={handleOnSubmit}/>}
         </>
     );
 }

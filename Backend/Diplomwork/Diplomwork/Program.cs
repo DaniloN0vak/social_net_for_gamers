@@ -5,6 +5,9 @@ using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSignalR();
+
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -47,6 +50,9 @@ builder.Services.AddDbContext<AppDbContext>(
 
 
 var app = builder.Build();
+
+app.MapHub<ChatHub>("/chatHub");
+
 
 app.UseCors("AllowReactDev");
 

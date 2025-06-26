@@ -35,6 +35,7 @@ function MessageInput({ backColor = "#2C2F36", inFileArea = false, messageContro
                 onInput={handleInput}
                 rows={1}
                 onChange={(e) => setMessage(e.target.value)}
+                value={message}
             />
             <div className={styles.messageImages}>
 

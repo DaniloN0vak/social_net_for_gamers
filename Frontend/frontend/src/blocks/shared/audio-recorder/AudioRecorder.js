@@ -12,17 +12,23 @@ export default function AudioRecorder({ audioRecordingControl }) {
     const mediaRecorderRef = useRef(null);
     const chunks = useRef([]);
     const [recordingTime, setRecordingTime] = useState(0);
-    const intervalRef = useRef(null);
     const [audioSrc, setAudioSrc] = useState(null);
     const [previewReady, setPreviewReady] = useState(false);
+    const intervalRef = useRef(null);
+    const startTimeRef = useRef(null);
 
     useEffect(() => {
         if (isRecording && !isPaused) {
+            if (!startTimeRef.current) {
+                startTimeRef.current = Date.now() - recordingTime;
+            }
+
             intervalRef.current = setInterval(() => {
-                setRecordingTime(prev => prev + 1);
-            }, 1000);
+                setRecordingTime(Date.now() - startTimeRef.current);
+            }, 100);
         } else {
             clearInterval(intervalRef.current);
+            startTimeRef.current = null;
         }
         return () => clearInterval(intervalRef.current);
     }, [isRecording, isPaused]);
@@ -153,7 +159,6 @@ export default function AudioRecorder({ audioRecordingControl }) {
                         </AudioControls>
                     )}
 
-                    {/* Если нужно, можно раскомментировать AudioPreview */}
                     {/* {previewReady && (
                         <AudioPreview
                             audioSrc={audioSrc}

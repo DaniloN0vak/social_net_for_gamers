@@ -3,15 +3,18 @@ using Diplomwork.Models.DatabaseModels.Tables;
 using Diplomwork.Models.DTO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Diplomwork.Models
 {
     public class ChatService
     {
         private readonly AppDbContext _context;
-        public ChatService(AppDbContext context)
+        private readonly IHubContext<ChatHub> _hubContext;
+        public ChatService(AppDbContext context, IHubContext<ChatHub> hubContext)
         {
             _context = context;
+            _hubContext = hubContext;
         }
 
         private async Task<Chat?> GetChatById(long id)
@@ -80,7 +83,8 @@ namespace Diplomwork.Models
                         Name = m.Name,
                         Type = m.Type,
                         Url = m.Src,
-                        IsBloored = m.IsBloored
+                        IsBloored = m.IsBloored,
+                        Size = m.Size
                     }).ToList();
 
                     Console.WriteLine(mediaDtos.Count);
@@ -89,6 +93,28 @@ namespace Diplomwork.Models
                     _context.Media.AddRange(mediaEntities);
                     await _context.SaveChangesAsync();
                 }
+
+                User userTmp = await _context.Users.FirstOrDefaultAsync(x => x.Id == userId);
+
+                UserDto user = new UserDto()
+                {
+                    Id = userId,
+                    Avatar = userTmp.AvatarUrl,
+                    FirstName = userTmp.Firstname,
+                    LastName = userTmp.Lastname
+                };
+
+                MessageDto msg = new MessageDto()
+                {
+                    Id = messageId,
+                    Content = content,
+                    IsEdited = false,
+                    Media = mediaDtos,
+                    SentAt = DateTime.UtcNow,
+                    User = user
+                };
+
+                await _hubContext.Clients.Group(chatId.ToString()).SendAsync("ReceiveMessage", msg);
             }
             catch (Exception ex)
             {
@@ -99,6 +125,7 @@ namespace Diplomwork.Models
 
         public async Task<ChatDto?> ChatToSend(long chatId)
         {
+
             Chat? chat = await GetChatById(chatId);
 
             if (chat == null) { return null; }
@@ -108,18 +135,18 @@ namespace Diplomwork.Models
             chatDto.AvatarUrl = chat.AvatarUrl;
             chatDto.Name = chat.Name;
             chatDto.IsGroup = chat.IsGroup;
+            chatDto.Id = chat.Id;
 
-            List<User> users = _context.Users.Include(u => u.ChatUsers).Where(u => u.ChatUsers.Any(cu => cu.ChatId == chat.Id)).ToList();
-            foreach (var user in users)
-            {
-                chatDto.Companions.Add(new UserDto()
+            chatDto.Companions = await _context.Users
+                .Where(u => u.ChatUsers.Any(cu => cu.ChatId == chat.Id))
+                .Select(u => new UserDto
                 {
-                    Avatar = user.AvatarUrl,
-                    FirstName = user.AvatarUrl,
-                    LastName = user.Lastname,
-                    Id = user.Id
-                });
-            }
+                    Id = u.Id,
+                    FirstName = u.Firstname,
+                    LastName = u.Lastname,
+                    Avatar = u.AvatarUrl
+                })
+                .ToListAsync();
 
 
 
@@ -128,10 +155,11 @@ namespace Diplomwork.Models
                 List<MediumDto> media = new List<MediumDto>();
                 foreach (var medium in msg.Media)
                 {
-                    media.Add(new MediumDto() { Id = medium.Id, IsBloored = medium.IsBloored, Name = medium.Name, Src = medium.Url, Type = medium.Type });
+                    media.Add(new MediumDto() { Id = medium.Id, IsBloored = medium.IsBloored, Name = medium.Name, Src = medium.Url, Type = medium.Type, Size = medium.Size });
                 }
                 chatDto.Messages.Add(new MessageDto()
                 {
+                    Id = msg.Id,
                     Content = msg.Content,
                     IsEdited = msg.IsEdited,
                     Media = media,

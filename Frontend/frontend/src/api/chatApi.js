@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+const apiUrl = process.env.REACT_APP_API_URL;
 const apiClient = axios.create({
-  baseURL: 'https://localhost:7102/api/chat',
+  baseURL: apiUrl+"/api/chat",
   withCredentials: true
 });
 

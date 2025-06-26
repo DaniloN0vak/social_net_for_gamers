@@ -8,7 +8,7 @@ import threeStripes from '../../../../assets/images/chat-header/three-stripes.pn
 import dotAttached from '../../../../assets/images/chat-header/dot-attached.png';
 import dot from '../../../../assets/images/chat-header/dot.png';
 
-function HeaderItem({ companion = {}, isAttached, handleAttachClick, isHovered }) {
+function HeaderItem({ logoSrc, name, additional, isAttached, handleAttachClick, isHovered }) {
     const onKeyDownAttach = useCallback((e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -22,13 +22,13 @@ function HeaderItem({ companion = {}, isAttached, handleAttachClick, isHovered }
         >
             <div className={styles.info}>
                 <div className={styles.image}>
-                    <img src={companion.avatar || defaultAvatar} alt="Avatar" />
+                    <img src={logoSrc || defaultAvatar} alt="Avatar" />
                 </div>
                 <div className={styles.descr}>
                     <div className={styles.name}>
-                        {companion.firstName || 'No name'} {companion.lastName || ''}
+                        {name || 'No name'}
                     </div>
-                    <div className={styles.event}>{companion.event || ''}</div>
+                    <div className={styles.event}>{additional || ''}</div>
                 </div>
             </div>
             <div className={styles.images}>

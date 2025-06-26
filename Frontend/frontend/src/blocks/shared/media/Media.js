@@ -49,111 +49,115 @@ function Media({ media }) {
         };
     }, [media]);
 
-    const imgOrVideo = useCallback((src, onClick) =>
-        /\.(mp4|webm|ogg)$/i.test(src) ? (
+    const imgOrVideo = useCallback((src, onClick) => {
+
+        return /\.(mp4|webm|ogg)$/i.test(src) ? (
             <video controls className={styles.medium} src={src} onClick={onClick} />
         ) : (
             <img src={src} alt="media" className={styles.medium} onClick={onClick} style={{ cursor: 'pointer' }} />
-        ),
-        []);
+        )
+    }, []);
 
     const renderImages = useCallback((media) => {
         const handleClick = (src) => handleSelectImage(src);
+
+        const addContainerClass = (className) =>
+            `${className} ${styles.mediumContainer}`.trim();
+
+        const imgOrVideo = (src, onClick, isBloored) => {
+            const className = `${styles.medium}${isBloored ? ` ${styles.bloored}` : ''}`;
+            return /\.(mp4|webm|ogg)$/i.test(src) ? (
+                <video controls src={src} onClick={onClick} className={className} />
+            ) : (
+                <img src={src} alt="media" onClick={onClick} className={className} style={{ cursor: 'pointer' }} />
+            );
+        };
+
         let mediaElement;
         switch (media.length) {
             case 1: {
-                if (media[0].ratio > 1) {
-                    mediaElement = (
-                        <div className={styles.medium1hor}>
-                            {imgOrVideo(media[0].src, () => handleClick(media[0].src))}
-                        </div>
-                    );
-                } else {
-                    mediaElement = (
-                        <div className={styles.medium1ver}>
-                            {imgOrVideo(media[0].src, () => handleClick(media[0].src))}
-                        </div>
-                    );
-                }
-            } break;
+                const item = media[0];
+                const baseClass = item.ratio > 1 ? styles.medium1hor : styles.medium1ver;
+                mediaElement = (
+                    <div className={addContainerClass(baseClass)}>
+                        {imgOrVideo(item.src, () => handleClick(item.src), item.isBloored)}
+                    </div>
+                );
+                break;
+            }
             case 2: {
                 mediaElement = (
                     <div className={styles.media2}>
-                        <div>{imgOrVideo(media[0].src, () => handleClick(media[0].src))}</div>
-                        <div>{imgOrVideo(media[1].src, () => handleClick(media[1].src))}</div>
+                        {media.map((item, i) => (
+                            <div key={i} className={addContainerClass('')}>
+                                {imgOrVideo(item.src, () => handleClick(item.src), item.isBloored)}
+                            </div>
+                        ))}
                     </div>
                 );
-            } break;
+                break;
+            }
             case 3: {
                 mediaElement = (
                     <div className={styles.media3}>
-                        <div className={styles.media3Item}>
-                            {imgOrVideo(media[0].src, () => handleClick(media[0].src))}
+                        <div className={addContainerClass(styles.media3Item)}>
+                            {imgOrVideo(media[0].src, () => handleClick(media[0].src), media[0].isBloored)}
                         </div>
                         <div className={`${styles.media3Column} ${styles.media3Item}`}>
-                            <div className={styles.media3ColumnItem}>
-                                {imgOrVideo(media[1].src, () => handleClick(media[1].src))}
-                            </div>
-                            <div className={styles.media3ColumnItem}>
-                                {imgOrVideo(media[2].src, () => handleClick(media[2].src))}
-                            </div>
+                            {[media[1], media[2]].map((item, i) => (
+                                <div key={i} className={addContainerClass(styles.media3ColumnItem)}>
+                                    {imgOrVideo(item.src, () => handleClick(item.src), item.isBloored)}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 );
-            } break;
+                break;
+            }
             case 4: {
                 mediaElement = (
                     <div className={styles.media4}>
-                        <div className={styles.media4Column}>
-                            <div className={styles.media4ColumnItem}>
-                                {imgOrVideo(media[0].src, () => handleClick(media[0].src))}
+                        {[0, 2].map((start, colIdx) => (
+                            <div key={colIdx} className={styles.media4Column}>
+                                {[media[start], media[start + 1]].map((item, i) => (
+                                    <div key={i} className={addContainerClass(styles.media4ColumnItem)}>
+                                        {imgOrVideo(item.src, () => handleClick(item.src), item.isBloored)}
+                                    </div>
+                                ))}
                             </div>
-                            <div className={styles.media4ColumnItem}>
-                                {imgOrVideo(media[1].src, () => handleClick(media[1].src))}
-                            </div>
-                        </div>
-                        <div className={styles.media4Column}>
-                            <div className={styles.media4ColumnItem}>
-                                {imgOrVideo(media[2].src, () => handleClick(media[2].src))}
-                            </div>
-                            <div className={styles.media4ColumnItem}>
-                                {imgOrVideo(media[3].src, () => handleClick(media[3].src))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 );
-            } break;
+                break;
+            }
             case 5: {
                 mediaElement = (
                     <div className={styles.media5}>
-                        <div className={styles.media5Item}>
-                            {imgOrVideo(media[0].src, () => handleClick(media[0].src))}
+                        <div className={addContainerClass(styles.media5Item)}>
+                            {imgOrVideo(media[0].src, () => handleClick(media[0].src), media[0].isBloored)}
                         </div>
-                        <div className={styles.media5Column}>
-                            <div className={styles.media5ColumnItem}>
-                                {imgOrVideo(media[1].src, () => handleClick(media[1].src))}
+                        {[1, 3].map((start, colIdx) => (
+                            <div key={colIdx} className={styles.media5Column}>
+                                {[media[start], media[start + 1]].map((item, i) => (
+                                    <div key={i} className={addContainerClass(styles.media5ColumnItem)}>
+                                        {imgOrVideo(item.src, () => handleClick(item.src), item.isBloored)}
+                                    </div>
+                                ))}
                             </div>
-                            <div className={styles.media5ColumnItem}>
-                                {imgOrVideo(media[2].src, () => handleClick(media[2].src))}
-                            </div>
-                        </div>
-                        <div className={styles.media5Column}>
-                            <div className={styles.media5ColumnItem}>
-                                {imgOrVideo(media[3].src, () => handleClick(media[3].src))}
-                            </div>
-                            <div className={styles.media5ColumnItem}>
-                                {imgOrVideo(media[4].src, () => handleClick(media[4].src))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 );
-            } break;
+                break;
+            }
             default: {
                 mediaElement = null;
             }
         }
+
         return mediaElement;
-    }, [imgOrVideo, handleSelectImage]);
+    }, [handleSelectImage]);
+
+
 
     return (
         <>

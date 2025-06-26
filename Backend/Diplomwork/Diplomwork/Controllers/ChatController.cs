@@ -40,7 +40,6 @@ namespace Diplomwork.Controllers
             var form = Request.Form;
             string content = form["content"];
             int userId = int.Parse(form["userId"]);
-            Console.WriteLine(content);
             var mediaList = new List<MediumDto>();
             int index = 0;
 
@@ -53,6 +52,8 @@ namespace Diplomwork.Controllers
                 var isBloored = bool.Parse(form[$"media[{index}].isBloored"]);
                 var name = form[$"media[{index}].name"];
                 var type = form[$"media[{index}].type"];
+
+                var size = double.Parse(form[$"media[{index}].size"]);
 
 
                 string userFolder = $"User_{userId}";
@@ -78,7 +79,8 @@ namespace Diplomwork.Controllers
                     IsBloored = isBloored,
                     Name = name,
                     Type = type,
-                    Src = $"/UploadedMedia/{userFolder}/{uniqueFileName}"
+                    Src = $"/UploadedMedia/{userFolder}/{uniqueFileName}",
+                    Size = size
                 });
 
                 index++;

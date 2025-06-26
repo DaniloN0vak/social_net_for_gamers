@@ -13,7 +13,6 @@ function FilePreviewArea({ filesControl, onClose, onFileSelect, messageControl, 
     const [blurAll, setBlurAll] = useState(false);
     const [dragActive, setDragActive] = useState(false);
     const fileInputRef = useRef(null);
-
     const handleFileChange = (e) => {
         const files = Array.from(e.target.files || []);
         if (files.length && onFileSelect) {
@@ -23,7 +22,8 @@ function FilePreviewArea({ filesControl, onClose, onFileSelect, messageControl, 
                 src: URL.createObjectURL(file),
                 type: file.type,
                 name: file.name,
-                file: file
+                file: file,
+                size: file.size
             }));
             onFileSelect(fileItems);
         }
@@ -46,7 +46,8 @@ function FilePreviewArea({ filesControl, onClose, onFileSelect, messageControl, 
                 src: URL.createObjectURL(file),
                 type: file.type,
                 name: file.name,
-                file: file
+                file: file,
+                size: file.size
             }));
             onFileSelect(fileItems);
         }
