@@ -10,5 +10,6 @@
         public long MessageId { get; set; }
         public double Size { get; set; }
         public Message Message { get; set; }
+
     }
 }

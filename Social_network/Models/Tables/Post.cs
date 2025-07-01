@@ -18,6 +18,7 @@
         public virtual List<Post> Posts { get; set; }
         public virtual List<Report> Reports { get; set; }
         public virtual List<PostTag> PostTags { get; set; }
+        public virtual List<PostMedia> Media { get; set; } = new();
 
         public Post()
         {

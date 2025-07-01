@@ -1,12 +1,18 @@
 import "./Sidebar.css";
-import React from "react";
+import React, { useState } from "react";
 import ChatIcon from './icons/ChatIcon';
-import ContactsIcon from './icons/ContactsIcon';
+import ContactsIcon from './icons/ContactsIcon.jsx';
 import SavedIcon from './icons/SavedIcon';
 import StoreIcon from './icons/StoreIcon';
 import NotificationIcon from './icons/NotificationIcon';
+import SettingsIcon from "./icons/SettingsIcon.jsx";
+import CreatePost from "./CreatePost.jsx"; 
 
-const RightSidebar = () => (
+
+const RightSidebar = () => {
+  const [showCreatePost, setShowCreatePost] = useState(false);
+
+    return (
     <aside className='sidebar-right'>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', alignItems: 'center' }}>
         <button className='button-cmt'>
@@ -31,13 +37,27 @@ const RightSidebar = () => (
             <NotificationIcon />
         </button>
     </div>
-            <button className='button-cmt'
-                style={{ marginTop: 'auto', marginBottom: 8 }}
-                onClick={() => alert('Help is on the way!')}
-            >
-                <p className='raleway-font' style={{ color: '#fff', fontSize: 36, margin: 0 }}>?</p>
-            </button>
+        <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+      <button
+        className='button-cmt'
+        style={{ width: 50, height: 50, backgroundColor: '#F6F6F6', color: '#1AAAF5', fontSize: 24, fontWeight: 'bold' }} 
+        onClick={() => setShowCreatePost(true)}
+      >
+        +
+      </button>
+      <button className='button-cmt'>
+        <SettingsIcon />
+      </button>
+      <button
+        className='button-cmt'
+        onClick={() => alert('Help is on the way!')}
+      >
+        <p className='raleway-font' style={{ color: '#fff', fontSize: 36, margin: 0 }}>?</p>
+      </button>
+    </div>
+    {showCreatePost && (<CreatePost onClose={() => setShowCreatePost(false)} />)}
         </aside>
-);
+    );
+};
 
 export default RightSidebar;

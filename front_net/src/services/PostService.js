@@ -1,6 +1,6 @@
 import api from '../api/api.js';
 
-export const createPost = async (postData) => {
-  const res = await api.post('/posts', postData);
+export const createPost = async (data) => {
+  const res = await api.post('/post', data);
   return res.data;
 };
