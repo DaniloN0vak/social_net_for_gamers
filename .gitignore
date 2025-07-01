@@ -6,6 +6,11 @@ obj/
 appsettings.json
 appsettings.Development.json
 
+Authorization/Authorization/bin/
+Authorization/Authorization/obj/
+Authorization/Authorization/bin/Debug/net8.0/appsettings.json
+
+
 # VSCode / Rider
 .vscode/
 .idea/
