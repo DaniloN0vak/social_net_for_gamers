@@ -1,0 +1,18 @@
+# Build results
+bin/
+obj/
+
+# User secrets
+appsettings.json
+appsettings.Development.json
+
+# VSCode / Rider
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
