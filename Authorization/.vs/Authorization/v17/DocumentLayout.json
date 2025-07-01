@@ -1,0 +1,249 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Diplomarbeit\\Authorization\\Authorization\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\authorizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\authorizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\databasemodels\\data\\configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\databasemodels\\data\\configuration\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\controllers\\authorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\controllers\\authorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\jwtauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\jwtauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\databasemodels\\data\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\databasemodels\\data\\configuration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\databasemodels\\data\\configuration\\userstateconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\databasemodels\\data\\configuration\\userstateconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\databasemodels\\tables\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\databasemodels\\tables\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|d:\\diplomarbeit\\authorization\\authorization\\authorization\\models\\databasemodels\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B854B66D-0868-4FBC-8CE3-7863F6739F5D}|Authorization\\Authorization.csproj|solutionrelative:authorization\\models\\databasemodels\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 53,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\AccountConfiguration.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\AccountConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\AccountConfiguration.cs",
+              "RelativeToolTip": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\AccountConfiguration.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T13:53:09.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Authorization\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Authorization\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-28T22:46:20.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\appsettings.json",
+              "RelativeDocumentMoniker": "Authorization\\appsettings.json",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\appsettings.json",
+              "RelativeToolTip": "Authorization\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-28T22:46:15.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Program.cs",
+              "RelativeDocumentMoniker": "Authorization\\Program.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Program.cs",
+              "RelativeToolTip": "Authorization\\Program.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAwwGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T23:20:35.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserConfiguration.cs",
+              "RelativeToolTip": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T22:02:32.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserStateConfiguration.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserStateConfiguration.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserStateConfiguration.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserStateConfiguration.cs",
+              "RelativeToolTip": "Authorization\\Models\\DatabaseModels\\Data\\Configuration\\UserStateConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T22:02:22.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Tables\\User.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\DatabaseModels\\Tables\\User.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Tables\\User.cs",
+              "RelativeToolTip": "Authorization\\Models\\DatabaseModels\\Tables\\User.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T22:02:14.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\DatabaseModels\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\DatabaseModels\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Authorization\\Models\\DatabaseModels\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T21:11:13.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtAuthService.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\JwtAuthService.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\JwtAuthService.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\JwtAuthService.cs",
+              "RelativeToolTip": "Authorization\\Models\\JwtAuthService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAkwFYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T23:05:22.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorizationService.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\AuthorizationService.cs",
+              "RelativeDocumentMoniker": "Authorization\\Models\\AuthorizationService.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Models\\AuthorizationService.cs",
+              "RelativeToolTip": "Authorization\\Models\\AuthorizationService.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAAwMUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T19:18:47.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthorizationController.cs",
+              "DocumentMoniker": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Controllers\\AuthorizationController.cs",
+              "RelativeDocumentMoniker": "Authorization\\Controllers\\AuthorizationController.cs",
+              "ToolTip": "D:\\Diplomarbeit\\Authorization\\Authorization\\Authorization\\Controllers\\AuthorizationController.cs",
+              "RelativeToolTip": "Authorization\\Controllers\\AuthorizationController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T15:32:28.853Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 98,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

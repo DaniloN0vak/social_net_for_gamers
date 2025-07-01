@@ -1,0 +1,28 @@
+.mainContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 43%;
+    min-width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 200px;
+    align-items: center;
+    background-color: #212124;
+    gap: 85px;
+    box-sizing: border-box;
+}
+
+
+@media (max-height: 900px) {
+    .container{
+        padding-top: 60px;
+        gap:40px;
+    }
+}
