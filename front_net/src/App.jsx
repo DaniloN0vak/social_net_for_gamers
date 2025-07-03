@@ -1,28 +1,37 @@
+import React, { useState } from 'react';
 import Header from "./Header.jsx";
 import MainContent from "./MainContent.jsx";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import FollowedPage from './FollowedPage';
 import Pages from './Pages.jsx';
 import MainLayout from './MainLayout.jsx';
 import NewsPage from "./NewsPage.jsx";
 import CommunityPage from "./CommunityPage.jsx";
 
-function App() {
+const AppContent = () => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-        <Header />
+    <>
+      <Header currentPath={location.pathname} />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<MainContent />} />
           <Route path="/followed" element={<FollowedPage />} />
           <Route path="/pages" element={<Pages />} />
-          <Route path="/news" element={<NewsPage></NewsPage>} />
+          <Route path="/news" element={<NewsPage />} />
           <Route path="/communities" element={<CommunityPage />} />
         </Route>
-
       </Routes>
-    </BrowserRouter>
+    </>
   );
-}
+};
+
+const App = () => (
+  <BrowserRouter>
+    <AppContent />
+  </BrowserRouter>
+);
+
 
 export default App

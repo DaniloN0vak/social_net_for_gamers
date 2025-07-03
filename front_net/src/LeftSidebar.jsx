@@ -1,5 +1,7 @@
 import React from "react";
 import "./Sidebar.css"; // Імпортуємо CSS файл
+import PMIcon from "./icons/PMIcon";
+import GroupIcon from "./icons/GroupIcon.jsx";
 
 const Sidebar = () => (
     <div style={{
@@ -10,7 +12,7 @@ const Sidebar = () => (
         {/* Лівий бар */}
         <aside className="sidebar"> 
             <button className='button-cmt'>
-                <img className='img-main' src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="icon"/>
+                <PMIcon/>
             </button>
             <button className='button-pm'>
                 <img className='img-pm-button' src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
@@ -25,7 +27,7 @@ const Sidebar = () => (
                 <img className='img-pm-button' src="https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762" alt="icon"/>
             </button>
             <button className='button-cmt'>
-                <img className='img-main' src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="icon"/>     
+                <GroupIcon/>     
             </button>  
             <button className='button-group'>
                 <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>

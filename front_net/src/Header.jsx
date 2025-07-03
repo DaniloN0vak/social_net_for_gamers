@@ -11,7 +11,7 @@ const navLinks = [
     { label: 'Спільноти', key: '/communities' },
 ];
 
-const Header = () => {
+const Header = ({currentPath}) => {
     return (
         <header style={{
             display: 'flex',
@@ -40,7 +40,8 @@ const Header = () => {
                 style={{
                     background: 'none',
                     border: 'none',
-                    color: '#fff',
+                    color: currentPath === link.key ? '#1AAAF5' : '#fff',
+                    fontWeight: currentPath === link.key ? 'bold' : 'normal',
                     fontSize: 16,
                     cursor: 'pointer',
                     padding: '8px 12px',
@@ -49,7 +50,7 @@ const Header = () => {
                     textDecoration: 'none',
                     display: 'inline-block'
                 }}
-                onMouseOver={e => e.currentTarget.style.color = '#1AAAF5'}
+                onMouseOver={e => e.currentTarget.style.color = '#blue'}
                 onMouseOut={e => e.currentTarget.style.color = '#fff'}
                 >
                 {link.label}
@@ -61,7 +62,7 @@ const Header = () => {
                         type="text"
                         placeholder="Пошук"
                         style={{
-                            padding: '8px 36px 8px 12px', // залишаємо, цього достатньо
+                            padding: '8px 36px 8px 12px', 
                             borderRadius: 24,
                             border: '1px solid #353a45',
                             font: 'italic 15px Arial, sans-serif',
