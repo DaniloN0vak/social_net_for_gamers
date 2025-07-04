@@ -2,8 +2,12 @@ import React from "react";
 import "./Sidebar.css"; 
 import PMIcon from "./icons/PMIcon";
 import GroupIcon from "./icons/GroupIcon.jsx";
+import { useCommunity } from './contexts/CommunityContext';
 
-const Sidebar = ({ joinedCommunities }) => (
+const Sidebar = () => {
+    const { joinedCommunities } = useCommunity();
+
+return (
     <div style={{
         display: 'flex',
         minHeight: 'calc(100vh - 64px)',
@@ -32,10 +36,15 @@ const Sidebar = ({ joinedCommunities }) => (
             <button className='button-group'>
                 <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>
             </button>  
-            
+            {joinedCommunities.map((c, i) => (
+                <button key={i} className="button-group">
+                <img className="img-group" src={c.avatar} alt={c.title} />
+                </button>
+            ))}
         </aside>
     </div>
-            
 );
+     
+};
 
 export default Sidebar;

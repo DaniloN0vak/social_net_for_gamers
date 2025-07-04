@@ -1,33 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import './index.css';
+import { useCommunity } from './contexts/CommunityContext';
 
-const CommunityCard = ({ banner, avatar, title, description, membersCount }) => {
+const CommunityCard = ({ banner, avatar, title, description, members }) => {
+  const { joinCommunity, leaveCommunity } = useCommunity();
   const [joined, setJoined] = useState(false);
-  const [members, setMembers] = useState(membersCount);
 
   const handleJoin = () => {
-  if (joined) {
-    setJoined(false);
-    setMembers(m => m - 1);
-  } else {
-    setJoined(true);
-    setMembers(m => m + 1);
-  }
-};
+    if (joined) {
+      leaveCommunity(title);
+      setJoined(false);
+    } else {
+      joinCommunity({ title, avatar });
+      setJoined(true);
+    }
+  };
 
   return (
     <div className="raleway-font flex flex-col items-center">
       <div
         className="relative rounded-xl p-4 shadow-sm mb-18 overflow-hidden hover:shadow-lg transition flex items-center"
-        style={{
-          width: 1140,
-          height: 250,
-          minWidth: 1140,
-          minHeight: 250,
-          maxWidth: 1140,
-          maxHeight: 250,
-          boxSizing: 'border-box'
-        }}
+        style={{ width: 1140, height: 250 }}
       >
         {banner && (
           <img
@@ -53,9 +46,7 @@ const CommunityCard = ({ banner, avatar, title, description, membersCount }) => 
           <button
             onClick={handleJoin}
             className={`raleway-font px-6 py-3 rounded-md transition text-base ${
-              joined
-                ? ' bg-gray-900  text-white'
-                : 'bg-gray-300 text-gray-700'
+              joined ? ' bg-gray-900  text-white' : 'bg-gray-300 text-gray-700'
             }`}
             style={{ marginRight: '52px' }}
           >
