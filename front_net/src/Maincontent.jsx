@@ -67,7 +67,7 @@ const MainContent = () => (
                     stats={{ likes: 100, comments: 30, views: 50, shares: 1, saves: 8 }} />
 
                     <PostCard
-                    avatar = "https://ik.imagekit.io/ufzr7vwbk/image_2025-01-19_10-46-47.png?updatedAt=1748859487762"
+                    avatar = "https://i.scdn.co/image/ab67616d0000b2737f158d901d17cece6bef2211"
                     username="n0vak"
                     dateTime="2025-07-01 11:10"
                     text="Встиг якось між навчанням купити собі консольку, пограв місяць і ось результати які ігри маю. А ви як розважаєтесь? )"

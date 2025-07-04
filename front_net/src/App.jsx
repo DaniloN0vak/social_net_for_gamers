@@ -12,6 +12,8 @@ import inPages from "./inPages.jsx";
 const AppContent = () => {
   const location = useLocation();
 
+  
+
   return (
     <>
       <Header currentPath={location.pathname} />

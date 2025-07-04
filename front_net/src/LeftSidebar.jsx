@@ -1,9 +1,9 @@
 import React from "react";
-import "./Sidebar.css"; // Імпортуємо CSS файл
+import "./Sidebar.css"; 
 import PMIcon from "./icons/PMIcon";
 import GroupIcon from "./icons/GroupIcon.jsx";
 
-const Sidebar = () => (
+const Sidebar = ({ joinedCommunities }) => (
     <div style={{
         display: 'flex',
         minHeight: 'calc(100vh - 64px)',
@@ -32,15 +32,7 @@ const Sidebar = () => (
             <button className='button-group'>
                 <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>
             </button>  
-            <button className='button-group'>
-                <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>
-            </button> 
-            <button className='button-group'>
-                <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>
-            </button> 
-            <button className='button-group'>
-                <img className='img-group' src="https://ik.imagekit.io/ufzr7vwbk/fluidicon.png?updatedAt=1748944193951" alt="icon"/>
-            </button> 
+            
         </aside>
     </div>
             
