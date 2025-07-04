@@ -20,7 +20,7 @@ const PostCard = ({
     return (
     <div
       className="p-4 rounded-xl shadow-md mb-6 w-full max-w-300 mx-auto"
-      style={{ minHeight: 520, maxWidth: 500 }}
+      style={{ minHeight: 0, maxWidth: 1000 }}
     >
       {/* Header: avatar -> user -> date */}
       <div className="flex items-center mb-4">
@@ -52,103 +52,110 @@ const PostCard = ({
 
       {/* Images */}
       {images.length > 0 && (
-        <div
-          className="mb-4"
-          style={{
-            display: 'grid',
-            gap: '8px',
-            gridTemplateColumns:
-              images.length === 1
-                ? '1fr'
-                : images.length === 2
-                ? '1fr 1fr'
-                : images.length === 3
-                ? '1fr'
-                : '1fr 1fr',
-            gridTemplateRows:
-              images.length === 3
-                ? '1fr 1fr'
-                : images.length === 4
-                ? '1fr 1fr'
-                : undefined,
-          }}
-        >
-          {images.length === 3 ? (
-  <>
-            <img
-              src={images[0]}
-              alt="Post image 1"
-              style={{
-                width: '100%',
-                height: '220px',
-                objectFit: 'cover',
-                borderRadius: '12px',
-                gridColumn: '1 / -1',
-                cursor: 'pointer'
-              }}
-              onClick={() => setModalImg(images[0])}
-            />
-            <img
-              src={images[1]}
-              alt="Post image 2"
-              style={{
-                width: '100%',
-                height: '120px',
-                objectFit: 'cover',
-                borderRadius: '12px',
-                cursor: 'pointer'
-              }}
-              onClick={() => setModalImg(images[1])} // <-- виправлено
-            />
-            <img
-              src={images[2]}
-              alt="Post image 3"
-              style={{
-                width: '100%',
-                height: '120px',
-                objectFit: 'cover',
-                borderRadius: '12px',
-                cursor: 'pointer'
-              }}
-              onClick={() => setModalImg(images[2])} // <-- виправлено
-            />
-          </>
-        ) : images.length === 4 ? (
-          images.slice(0, 4).map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`Post image ${i + 1}`}
-              style={{
-                width: '100%',
-                height: '150px',
-                objectFit: 'cover',
-                borderRadius: '12px',
-                cursor: 'pointer'
-              }}
-              onClick={() => setModalImg(src)} // <-- виправлено
-            />
-          ))
-        ) : (
-          images.slice(0, 2).map((src, i) => (
+  images.length === 3 ? (
+    <div
+      className="mb-0"
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 320px',
+        gap: '10px',
+        height: '600px',
+        marginBottom: 0
+      }}
+    >
+      <img
+        src={images[0]}
+        alt="Post image 1"
+        style={{
+          width: '100%',
+          height: '600px',
+          objectFit: 'cover',
+          borderRadius: '12px',
+          cursor: 'pointer',
+          gridRow: '1 / span 2'
+        }}
+        onClick={() => setModalImg(images[0])}
+      />
+      <img
+        src={images[1]}
+        alt="Post image 2"
+        style={{
+          width: '100%',
+          height: '290px',
+          objectFit: 'cover',
+          borderRadius: '12px',
+          cursor: 'pointer',
+          marginBottom: '10px'
+        }}
+        onClick={() => setModalImg(images[1])}
+      />
+      <img
+        src={images[2]}
+        alt="Post image 3"
+        style={{
+          width: '100%',
+          height: '290px',
+          objectFit: 'cover',
+          borderRadius: '12px',
+          cursor: 'pointer'
+        }}
+        onClick={() => setModalImg(images[2])}
+      />
+    </div>
+  ) : (
+    <div
+      className="mb-0"
+      style={{
+        display: 'grid',
+        gap: '8px',
+        gridTemplateColumns:
+          images.length === 1
+            ? '1fr'
+            : images.length === 2
+            ? '1fr 1fr'
+            : images.length === 4
+            ? '1fr 1fr'
+            : undefined,
+        gridTemplateRows:
+          images.length === 4
+            ? '1fr 1fr'
+            : undefined,
+      }}
+    >
+      {images.length === 4
+        ? images.slice(0, 4).map((src, i) => (
             <img
               key={i}
               src={src}
               alt={`Post image ${i + 1}`}
               style={{
                 width: '100%',
-                height: images.length === 1 ? '320px' : '200px',
+                height: '290px',
                 objectFit: 'cover',
                 borderRadius: '12px',
                 cursor: 'pointer'
               }}
-              onClick={() => setModalImg(src)} // <-- виправлено
+              onClick={() => setModalImg(src)}
             />
           ))
-        )}
-        </div>
-  
-      )}
+        : images.slice(0, 2).map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`Post image ${i + 1}`}
+              style={{
+                width: '100%',
+                height: (images.length === 1 || images.length === 2) ? '600px' : '200px',
+                objectFit: 'cover',
+                borderRadius: '12px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setModalImg(src)}
+            />
+          ))}
+    </div>
+  )
+)}
       
       {videos.length > 0 && (
   <div className="mb-4 flex flex-col gap-4">
@@ -170,7 +177,8 @@ const PostCard = ({
 )}
 
       {/* Stats */}
-            <div className="flex items-center justify-between text-gray-500 text-sm">
+            <div className="flex items-center justify-between text-gray-500 text-sm"
+            style={{ marginTop: '16px' }}>
         <div className="flex items-center space-x-4">
           {/* Like */}
           <button

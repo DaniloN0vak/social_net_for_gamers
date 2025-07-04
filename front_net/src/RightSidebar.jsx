@@ -50,7 +50,7 @@ const RightSidebar = () => {
       </button>
       <button
         className='button-cmt'
-        onClick={() => alert('Help is on the way!')}
+        onClick={() => alert('Виникли якісь проблеми? Повідомте про це адміну: @danya_sigma1488')}
       >
         <p className='raleway-font' style={{ color: '#fff', fontSize: 36, margin: 0 }}>?</p>
       </button>

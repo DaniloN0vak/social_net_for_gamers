@@ -7,6 +7,7 @@ import Pages from './Pages.jsx';
 import MainLayout from './MainLayout.jsx';
 import NewsPage from "./NewsPage.jsx";
 import CommunityPage from "./CommunityPage.jsx";
+import inPages from "./inPages.jsx";
 
 const AppContent = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const AppContent = () => {
           <Route path="/pages" element={<Pages />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/communities" element={<CommunityPage />} />
+          <Route path="/page/:slug" element={<inPages />} />
         </Route>
       </Routes>
     </>
