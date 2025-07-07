@@ -26,7 +26,14 @@ const AppContent = () => {
             <Route path="/communities" element={<CommunityPage />} />
             <Route path="/page/:slug" element={<inPages />} />
           </Route>
-        
+
+          <Route path="/page/:slug" element={<GamePage />}>
+            <Route path="main" element={<GameMain />} />
+            <Route path="plot" element={<GamePlot />} />
+            <Route path="info" element={<GameInfo />} />
+            <Route path="hardware" element={<GameHardware />} />
+            <Route path="community" element={<GameCommunity />} />
+          </Route>
       </Routes>
     </>
   );

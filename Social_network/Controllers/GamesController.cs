@@ -1,24 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Social_network.Models.Data;
+using Social_network.Models.Tables;
+using System;
 
-[ApiController]
-[Route("api/games")]
-public class GamesController : ControllerBase
+namespace Social_network.Controllers
 {
-    private readonly AppDBContext _context;
-    public GamesController(AppDBContext context) => _context = context;
-
-    [HttpGet("{slug}")]
-    public async Task<IActionResult> GetGameBySlug(string slug)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class GamesController : ControllerBase
     {
-        var game = await _context.Games
-            .Include(g => g.Genres)
-            .Include(g => g.Categories)
-            .Include(g => g.Sections)
-            .FirstOrDefaultAsync(g => g.Slug == slug);
+        private readonly AppDBContext _context;
 
-        if (game == null) return NotFound();
-        return Ok(game);
+        public GamesController(AppDBContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateGame([FromBody] Game game)
+        {
+            if (await _context.Games.AnyAsync(g => g.Slug == game.Slug))
+                return BadRequest("Гра з таким Slug вже існує");
+
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+
+            return Ok(game);
+        }
+
+        [HttpGet("{slug}")]
+        public async Task<IActionResult> GetGame(string slug)
+        {
+            var game = await _context.Games
+                .Include(g => g.Genres)
+                .Include(g => g.Categories)
+                .Include(g => g.Sections)
+                .FirstOrDefaultAsync(g => g.Slug == slug);
+
+            if (game == null)
+                return NotFound();
+
+            return Ok(game);
+        }
     }
 }

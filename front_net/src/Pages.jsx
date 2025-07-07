@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Додаємо імпорт
+import { Link } from 'react-router-dom'; 
 import "./sidebar.css"; 
 import './index.css';
 
@@ -33,7 +33,7 @@ const pagesData = [
 ];
 
 const PageCard = ({ name, image, followers, official, avatar, logo }) => {
-  const slug = name.replace('@', '');
+  const slug = name.toLowerCase().replace('@', '').replaceAll(' ', '-');
   return (
     <Link to={`/page/${slug}`} style={{ textDecoration: 'none' }}>
       <div className="flex flex-col items-center gap-4 cursor-pointer hover:opacity-90 transition">
@@ -57,14 +57,13 @@ const PageCard = ({ name, image, followers, official, avatar, logo }) => {
               objectFit: 'cover',
             }}
           />
-          {/* Логотип гри */}
           {logo && (
             <img
               src={logo}
               alt="logo"
               style={{
                 position: 'absolute',
-                left: 40, // відступ зліва
+                left: 40, 
                 top: '50%',
                 transform: 'translateY(-50%)',
                 height: 90,
