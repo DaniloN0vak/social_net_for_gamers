@@ -39,6 +39,7 @@ namespace Social_network.Models.Data
         public DbSet<VideoStream> VideoStreams { get; set; }
         public DbSet<UserState> UsersStates { get; set; }
         public DbSet<ChatUser> ChatUsers { get; set; }
+        public DbSet<Game> Games { get; set; }
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {  }
@@ -58,6 +59,7 @@ namespace Social_network.Models.Data
             //    .HasForeignKey(n => n.ReferenceUserId)
             //    .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.ApplyConfiguration(new GameConfiguration());
             modelBuilder.ApplyConfiguration(new AccountConfiguration());
             modelBuilder.ApplyConfiguration(new AchievementConfiguration());
             modelBuilder.ApplyConfiguration(new AuditLogConfiguration());

@@ -11,8 +11,12 @@ export const CommunityProvider = ({ children }) => {
     );
   };
 
+   const leaveCommunity = (title) => {
+    setJoinedCommunities(prev => prev.filter(c => c.title !== title));
+  };
+
   return (
-    <CommunityContext.Provider value={{ joinedCommunities, joinCommunity }}>
+    <CommunityContext.Provider value={{ joinedCommunities, joinCommunity, leaveCommunity }}>
       {children}
     </CommunityContext.Provider>
   );
