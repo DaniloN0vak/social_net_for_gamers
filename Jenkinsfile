@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'dotnet' }
 
   stages {
     stage('Checkout') {
@@ -21,3 +21,4 @@ pipeline {
     }
   }
 }
+
