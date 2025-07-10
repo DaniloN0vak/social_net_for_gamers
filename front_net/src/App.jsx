@@ -7,11 +7,13 @@ import Pages from './Pages.jsx';
 import MainLayout from './MainLayout.jsx';
 import NewsPage from "./NewsPage.jsx";
 import CommunityPage from "./CommunityPage.jsx";
-import inPages from "./inPages.jsx";
-import { CommunityProvider } from './contexts/CommunityContext';
+import GamePage from "./GamePage.jsx";
+import { CommunityProvider } from './contexts/CommunityContext.jsx';
 
 const AppContent = () => {
   const location = useLocation();
+
+   const isGamePage = location.pathname.startsWith("/page/") && location.pathname.split("/").length > 2;
 
   return (
     <>
@@ -27,13 +29,8 @@ const AppContent = () => {
             <Route path="/page/:slug" element={<inPages />} />
           </Route>
 
-          <Route path="/page/:slug" element={<GamePage />}>
-            <Route path="main" element={<GameMain />} />
-            <Route path="plot" element={<GamePlot />} />
-            <Route path="info" element={<GameInfo />} />
-            <Route path="hardware" element={<GameHardware />} />
-            <Route path="community" element={<GameCommunity />} />
-          </Route>
+          <Route path="/page/:slug" element={<GamePage />} />
+
       </Routes>
     </>
   );

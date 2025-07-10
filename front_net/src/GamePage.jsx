@@ -40,7 +40,6 @@ const GamePage = () => {
         </div>
       </div>
 
-      {/* 🧭 Навігаційний хедер */}
       <nav className="bg-gray-900 text-white px-16 py-3 flex gap-6 text-lg raleway-font font-medium">
         <NavLink to={`/page/${slug}/main`} className={({ isActive }) => isActive ? 'underline' : ''}>Головна</NavLink>
         <NavLink to={`/page/${slug}/plot`} className={({ isActive }) => isActive ? 'underline' : ''}>Сюжет</NavLink>
