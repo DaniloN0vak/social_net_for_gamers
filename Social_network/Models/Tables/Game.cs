@@ -15,6 +15,7 @@
         public string IgnRating { get; set; }
         public int Followers { get; set; }
         public bool IsOfficial { get; set; }
+        public string LogoUrl { get; set; }
         public string BannerUrl { get; set; }
         public string Icon { get; set; }
         public string CommunityTag { get; set; }

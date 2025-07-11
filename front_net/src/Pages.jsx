@@ -76,18 +76,21 @@ export default function Pages() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/api/games") 
+    fetch("http://localhost:5065/api/games") 
       .then(res => res.json())
       .then(data => setGames(data))
       .catch(err => console.error("Failed to fetch games:", err));
   }, []);
 
   return (
+    
+
     <div style={{
       display: 'flex',
       minHeight: 'calc(100vh - 64px)',
       background: '#23272f'
     }}>
+      
       <div className="max-w-3xl mx-auto p-4">
         {games.map((game) => (
           <PageCard
@@ -96,7 +99,7 @@ export default function Pages() {
             name={`@${game.slug}`}
             followers={game.followers}
             official={game.isOfficial}
-            avatar={game.avatarUrl}
+            avatar={game.icon}
             logo={game.logoUrl}
           />
         ))}

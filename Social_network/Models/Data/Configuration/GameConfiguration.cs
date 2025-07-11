@@ -50,6 +50,9 @@ namespace Social_network.Models.Data.Configuration
 
             builder.Property(g => g.IsOfficial);
 
+            builder.Property(g => g.LogoUrl)
+                   .HasMaxLength(500);
+
             builder.Property(g => g.BannerUrl)
                    .HasMaxLength(500);
 
