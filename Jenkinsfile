@@ -1,18 +1,28 @@
 pipeline {
-  agent any
+  agent {
+    kubernetes {
+      label 'dotnet'
+      defaultContainer 'jnlp'
+    }
+  }
 
   stages {
     stage('Build') {
       steps {
-        sh 'dotnet build Social_network.sln'
+        container('jnlp') {
+          sh 'dotnet build Social_network.sln'
+        }
       }
     }
 
     stage('Test') {
       steps {
-        sh 'dotnet test'
+        container('jnlp') {
+          sh 'dotnet test'
+        }
       }
     }
   }
 }
+
 
