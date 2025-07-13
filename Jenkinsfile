@@ -26,20 +26,20 @@ spec:
         }
     }
 
-    stages {
-        stage('DockerHub Login') {
-            steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'dockerhub-creds',
-                    usernameVariable: 'DOCKERHUB_USERNAME',
-                    passwordVariable: 'DOCKERHUB_PASSWORD'
-                )]) {
-                    sh '''
-                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-                    '''
-                }
-            }
+    stage('DockerHub Login') {
+    steps {
+        withCredentials([usernamePassword(
+            credentialsId: 'dockerhub-creds',
+            usernameVariable: 'DOCKERHUB_USERNAME',
+            passwordVariable: 'DOCKERHUB_PASSWORD'
+        )]) {
+            sh '''
+                export PATH=$PATH:/usr/bin:/usr/local/bin
+                echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            '''
         }
+    }
+}
 
         stage('Build') {
             steps {
