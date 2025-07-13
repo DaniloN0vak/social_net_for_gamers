@@ -13,10 +13,10 @@ spec:
       command:
         - cat
       tty: true
-      volumeMounts:                ### ДОДАНО для доступу до docker socket
+      volumeMounts:                # ДОДАНО для доступу до docker socket
         - name: docker-sock
           mountPath: /var/run/docker.sock
-  volumes:                         ### ДОДАНО volume для socket
+  volumes:                         # ДОДАНО volume для socket
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
@@ -26,20 +26,21 @@ spec:
         }
     }
 
-    stage('DockerHub Login') {
-    steps {
-        withCredentials([usernamePassword(
-            credentialsId: 'dockerhub-creds',
-            usernameVariable: 'DOCKERHUB_USERNAME',
-            passwordVariable: 'DOCKERHUB_PASSWORD'
-        )]) {
-            sh '''
-                export PATH=$PATH:/usr/bin:/usr/local/bin
-                echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            '''
+    stages {
+        stage('DockerHub Login') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKERHUB_USERNAME',
+                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                )]) {
+                    sh '''
+                        export PATH=$PATH:/usr/bin:/usr/local/bin
+                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                    '''
+                }
+            }
         }
-    }
-}
 
         stage('Build') {
             steps {
@@ -53,7 +54,7 @@ spec:
             }
         }
 
-        // ### Опціонально: пуш Docker образу (розкоментуй при потребі)
+        // ### Опціонально: пуш Docker образу
         // stage('Docker Push') {
         //     steps {
         //         sh 'docker build -t user0107/social_net_for_gamers:latest .'
