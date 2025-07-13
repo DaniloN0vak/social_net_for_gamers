@@ -13,6 +13,13 @@ spec:
       command:
         - cat
       tty: true
+      volumeMounts:                ### ДОДАНО для доступу до docker socket
+        - name: docker-sock
+          mountPath: /var/run/docker.sock
+  volumes:                         ### ДОДАНО volume для socket
+    - name: docker-sock
+      hostPath:
+        path: /var/run/docker.sock
   imagePullSecrets:
     - name: dockerhub-creds
 """
@@ -45,6 +52,14 @@ spec:
                 sh 'dotnet test Social_network.sln'
             }
         }
+
+        // ### Опціонально: пуш Docker образу (розкоментуй при потребі)
+        // stage('Docker Push') {
+        //     steps {
+        //         sh 'docker build -t user0107/social_net_for_gamers:latest .'
+        //         sh 'docker push user0107/social_net_for_gamers:latest'
+        //     }
+        // }
     }
 }
 
