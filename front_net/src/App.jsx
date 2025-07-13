@@ -13,11 +13,11 @@ import { CommunityProvider } from './contexts/CommunityContext.jsx';
 const AppContent = () => {
   const location = useLocation();
 
-   const isGamePage = location.pathname.startsWith("/page/") && location.pathname.split("/").length > 2;
+   const isGamePage = location.pathname.startsWith("/page/");
 
   return (
     <>
-      <Header currentPath={location.pathname} />
+      {!isGamePage && <Header currentPath={location.pathname} />}
       <Routes>
         
           <Route element={<MainLayout />}>
@@ -26,10 +26,10 @@ const AppContent = () => {
             <Route path="/pages" element={<Pages />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/communities" element={<CommunityPage />} />
-            <Route path="/page/:slug" element={<inPages />} />
+            <Route path="/page/:slug" element={<GamePage />} />
           </Route>
 
-          <Route path="/page/:slug" element={<GamePage />} />
+          
 
       </Routes>
     </>

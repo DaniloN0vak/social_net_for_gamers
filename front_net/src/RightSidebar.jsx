@@ -7,6 +7,7 @@ import StoreIcon from './icons/StoreIcon';
 import NotificationIcon from './icons/NotificationIcon';
 import SettingsIcon from "./icons/SettingsIcon.jsx";
 import CreatePost from "./CreatePost.jsx"; 
+import { Link } from "react-router-dom";
 
 
 const RightSidebar = () => {
@@ -15,9 +16,11 @@ const RightSidebar = () => {
     return (
     <aside className='sidebar-right'>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', alignItems: 'center' }}>
+        <Link to="/">
         <button className='button-cmt'>
             <img className='img-rgt-main' src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-05-09_14-02-52.jpg?updatedAt=1748938849868" alt="icon" />
         </button>
+        </Link>
         <button className='button-cmt'>
             <img className='img-rgt-main' src="https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-04_13-09-27.jpg" alt="icon" />
         </button>

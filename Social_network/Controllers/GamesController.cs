@@ -29,7 +29,7 @@ namespace Social_network.Controllers
             return Ok(game);
         }
 
-        [HttpGet] //НА ЦЬОМУ Я ЗУПИНИВСЯ!
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Game>>> GetGame()
         {
             return await _context.Games.ToListAsync();
