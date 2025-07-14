@@ -35,7 +35,7 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | /usr/local/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
@@ -56,12 +56,12 @@ spec:
         }
 
         // Опціональний пуш Docker-образу
-        // stage('Docker Push') {
-        //     steps {
-        //         sh 'docker build -t user0107/social_net_for_gamers:latest .'
-        //         sh 'docker push user0107/social_net_for_gamers:latest'
-        //     }
-        // }
+        stage('Docker Push') {
+            steps {
+                sh '/usr/local/bin/docker build -t user0107/social_net_for_gamers:latest .'
+                sh '/usr/local/bin/docker push user0107/social_net_for_gamers:latest'
+            }
+        }
     }
 }
 
