@@ -7,6 +7,8 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
+  securityContext:
+    fsGroup: 123
   containers:
     - name: dotnet
       image: user0107/jenkins-agent-dotnet:8
