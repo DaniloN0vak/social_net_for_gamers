@@ -10,6 +10,7 @@ spec:
   containers:
     - name: dotnet
       image: user0107/jenkins-agent-dotnet:8
+      imagePullPolicy: Always
       command:
         - cat
       tty: true
