@@ -14,13 +14,20 @@ spec:
       image: user0107/jenkins-agent-dotnet:8
       imagePullPolicy: Always
       tty: true
+      command:
+        - cat
       volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
+        - name: kubeconfig
+          mountPath: /home/jenkins/.kube
   volumes:
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
+    - name: kubeconfig
+      secret:
+        secretName: k3s-kubeconfig
   imagePullSecrets:
     - name: dockerhub-creds
 """
@@ -29,23 +36,16 @@ spec:
 
     environment {
         DOCKER_BUILDKIT = '1'
+        IMAGE_NAME = 'user0107/social-net-app:latest'
     }
 
     stages {
-
-        stage('Check Docker Availability') {
+        stage('Install frontend deps & build') {
             steps {
-                sh '''
-                  echo "Checking Docker binary..."
-                  which docker || echo "docker not found"
-                  echo "Docker version:"
-                  docker --version || echo "cannot get version"
-                  echo "Listing /usr/bin and /usr/local/bin:"
-                  ls -l /usr/bin/docker || echo "not found in /usr/bin"
-                  ls -l /usr/local/bin/docker || echo "not found in /usr/local/bin"
-                  echo "Checking Docker socket:"
-                  ls -l /var/run/docker.sock || echo "socket missing"
-                '''
+                dir('front_net') {
+                    sh 'npm ci'
+                    sh 'npm run build'
+                }
             }
         }
 
@@ -57,30 +57,28 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                      echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
         }
 
-        stage('Build') {
+        stage('Build & Push Docker Image') {
             steps {
-                sh 'dotnet build Social_network.sln'
-                sh 'docker version'
-                sh 'docker info'
+                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker push $IMAGE_NAME'
             }
         }
 
-        stage('Test') {
+        stage('Apply DB Migrations') {
             steps {
-                sh 'dotnet test Social_network.sln'
+                sh 'dotnet ef database update --project Social_network/ --startup-project Social_network/'
             }
         }
 
-        stage('Push (TODO)') {
+        stage('Deploy to K3s') {
             steps {
-                echo '📝 Docker push will be implemented later.'
-                // sh 'docker push user0107/image:tag'
+                sh 'kubectl apply -f k8s/deployment.yaml'
             }
         }
     }

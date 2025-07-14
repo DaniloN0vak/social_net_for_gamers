@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+USER root
+
+# Встановлення Docker CLI, Java, curl
+RUN apt-get update && \
+    apt-get install -y curl docker.io openjdk-17-jdk ca-certificates && \
+    ln -s /usr/bin/docker /usr/local/bin/docker && \
+    getent group docker || groupadd -g 110 docker && \
+    useradd -m -d /home/jenkins -s /bin/bash -G docker jenkins
+
+# Копіюємо agent.jar (з локальної директорії в образ)
+COPY agent.jar /home/jenkins/agent/agent.jar
+
+# Дозволи
+RUN chown -R jenkins:jenkins /home/jenkins
+
+USER jenkins
+WORKDIR /home/jenkins/agent
+
+ENTRYPOINT ["java", "-jar", "/home/jenkins/agent/agent.jar"]
+
+

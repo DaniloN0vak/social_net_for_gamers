@@ -1,0 +1,11 @@
+{
+  "": "0",
+  "credentials": {
+    "scope": "GLOBAL",
+    "id": "dockerhub-creds",
+    "username": "user0107",
+    "password": "75//@B43/!^M",
+    "description": "DockerHub credentials for Jenkins agent",
+    "$class": "com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl"
+  }
+}
