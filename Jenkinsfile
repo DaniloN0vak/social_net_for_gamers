@@ -7,26 +7,48 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
+  securityContext:
+    fsGroup: 123
   containers:
     - name: dotnet
       image: user0107/jenkins-agent-dotnet:8
+      imagePullPolicy: Always
+      tty: true
       command:
         - cat
-      tty: true
-      volumeMounts:                # ДОДАНО для доступу до docker socket
+      volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
-  volumes:                         # ДОДАНО volume для socket
+        - name: kubeconfig
+          mountPath: /home/jenkins/.kube
+  volumes:
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
+    - name: kubeconfig
+      secret:
+        secretName: k3s-kubeconfig
   imagePullSecrets:
     - name: dockerhub-creds
 """
         }
     }
 
+    environment {
+        DOCKER_BUILDKIT = '1'
+        IMAGE_NAME = 'user0107/social-net-app:latest'
+    }
+
     stages {
+        stage('Install frontend deps & build') {
+            steps {
+                dir('front_net') {
+                    sh 'npm ci'
+                    sh 'npm run build'
+                }
+            }
+        }
+
         stage('DockerHub Login') {
             steps {
                 withCredentials([usernamePassword(
@@ -35,34 +57,31 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        export PATH=$PATH:/usr/bin:/usr/local/bin
                         echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
         }
 
-        stage('Build') {
+        stage('Build & Push Docker Image') {
             steps {
-                sh 'dotnet build Social_network.sln'
+                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker push $IMAGE_NAME'
             }
         }
 
-        stage('Test') {
+        stage('Apply DB Migrations') {
             steps {
-                sh 'dotnet test Social_network.sln'
+                sh 'dotnet ef database update --project Social_network/ --startup-project Social_network/'
             }
         }
 
-        // ### Опціонально: пуш Docker образу
-        // stage('Docker Push') {
-        //     steps {
-        //         sh 'docker build -t user0107/social_net_for_gamers:latest .'
-        //         sh 'docker push user0107/social_net_for_gamers:latest'
-        //     }
-        // }
+        stage('Deploy to K3s') {
+            steps {
+                sh 'kubectl apply -f k8s/deployment.yaml'
+            }
+        }
     }
 }
-
 
 

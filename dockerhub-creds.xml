@@ -1,0 +1,7 @@
+<com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
+  <scope>GLOBAL</scope>
+  <id>dockerhub-creds</id>
+  <description>DockerHub login</description>
+  <username>Eney01</username>
+  <password>75//@B43/!^M</password>
+</com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
