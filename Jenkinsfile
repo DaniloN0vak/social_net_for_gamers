@@ -27,6 +27,22 @@ spec:
     }
 
     stages {
+        stage('Check Docker Availability') {
+            steps {
+                sh '''
+                  echo "Checking Docker binary..."
+                  which docker || echo "docker not found"
+                  echo "Docker version:"
+                  docker --version || echo "cannot get version"
+                  echo "Listing /usr/bin and /usr/local/bin:"
+                  ls -l /usr/bin/docker || echo "not found in /usr/bin"
+                  ls -l /usr/local/bin/docker || echo "not found in /usr/local/bin"
+                  echo "Checking Docker socket:"
+                  ls -l /var/run/docker.sock || echo "socket missing"
+                '''
+            }
+        }
+
         stage('DockerHub Login') {
             steps {
                 withCredentials([usernamePassword(
@@ -55,15 +71,14 @@ spec:
             }
         }
 
-        // Опціональний пуш Docker-образу
         stage('Docker Push') {
             steps {
-                sh '/usr/local/bin/docker build -t user0107/social_net_for_gamers:latest .'
-                sh '/usr/local/bin/docker push user0107/social_net_for_gamers:latest'
+                // push logic here
             }
         }
     }
 }
+
 
 
 
