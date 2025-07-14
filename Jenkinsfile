@@ -13,10 +13,6 @@ spec:
     - name: dotnet
       image: user0107/jenkins-agent-dotnet:8
       imagePullPolicy: Always
-      command:
-        - /bin/sh
-        - -c
-        - cat
       tty: true
       volumeMounts:
         - name: docker-sock
