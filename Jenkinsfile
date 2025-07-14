@@ -35,7 +35,7 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        echo "$DOCKERHUB_PASSWORD" | /usr/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
@@ -44,6 +44,8 @@ spec:
         stage('Build') {
             steps {
                 sh 'dotnet build Social_network.sln'
+                sh 'docker version'
+                sh 'docker info'
             }
         }
 
