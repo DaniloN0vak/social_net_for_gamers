@@ -73,12 +73,13 @@ spec:
 
         stage('Docker Push') {
             steps {
-                // push logic here
+                echo 'Docker push is not implemented yet.'
+                // Приклад для майбутнього:
+                // sh 'docker push your-image-name'
             }
         }
     }
 }
-
 
 
 
