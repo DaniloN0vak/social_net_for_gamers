@@ -13,10 +13,10 @@ spec:
       command:
         - cat
       tty: true
-      volumeMounts:                # ДОДАНО для доступу до docker socket
+      volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
-  volumes:                         # ДОДАНО volume для socket
+  volumes:
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
@@ -35,8 +35,7 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        export PATH=$PATH:/usr/bin:/usr/local/bin
-                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | /usr/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
@@ -54,7 +53,7 @@ spec:
             }
         }
 
-        // ### Опціонально: пуш Docker образу
+        // Опціональний пуш Docker-образу
         // stage('Docker Push') {
         //     steps {
         //         sh 'docker build -t user0107/social_net_for_gamers:latest .'
