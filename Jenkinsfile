@@ -35,7 +35,7 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        echo "$DOCKERHUB_PASSWORD" | /usr/local/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | /usr/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
