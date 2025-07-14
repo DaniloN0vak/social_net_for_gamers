@@ -3,7 +3,7 @@ import { useParams, NavLink, Outlet, useNavigate, useLocation } from 'react-rout
 import './index.css';
 
 const navLinks = [
-  { label: 'Головна', key: 'main' },
+  { label: 'Головна', key: '' },
   { label: 'Сюжет', key: 'plot' },
   { label: 'Інфо', key: 'info' },
   { label: 'Залізо', key: 'hardware' },
@@ -112,7 +112,7 @@ const GamePage = () => {
       </div>
 
       <div
-        className="bg-gray-900 text-white px-16 py-3 flex items-center justify-between raleway-font"
+        className="text-white px-16 py-3 flex items-center justify-between raleway-font"
         style={{
           height: 64,
           background: '#23272f',
