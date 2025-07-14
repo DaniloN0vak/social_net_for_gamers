@@ -13,6 +13,10 @@ spec:
       command:
         - cat
       tty: true
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 110
+        allowPrivilegeEscalation: false
       volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
@@ -51,7 +55,7 @@ spec:
                     passwordVariable: 'DOCKERHUB_PASSWORD'
                 )]) {
                     sh '''
-                        echo "$DOCKERHUB_PASSWORD" | /usr/bin/docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                     '''
                 }
             }
@@ -74,12 +78,11 @@ spec:
         stage('Docker Push') {
             steps {
                 echo 'Docker push is not implemented yet.'
-                // Приклад для майбутнього:
+                // Example:
                 // sh 'docker push your-image-name'
             }
         }
     }
 }
-
 
 
