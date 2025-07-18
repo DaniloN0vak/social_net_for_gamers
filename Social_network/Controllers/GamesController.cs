@@ -44,6 +44,8 @@ namespace Social_network.Controllers
                 .Include(g => g.Sections)
                 .FirstOrDefaultAsync(g => g.Slug == slug);
 
+
+
             if (game == null)
                 return NotFound();
 

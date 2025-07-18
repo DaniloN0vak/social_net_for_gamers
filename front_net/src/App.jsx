@@ -8,7 +8,10 @@ import MainLayout from './MainLayout.jsx';
 import NewsPage from "./NewsPage.jsx";
 import CommunityPage from "./CommunityPage.jsx";
 import GamePage from "./GamePage.jsx";
+import SavedPostsPage from "./SavedPostsPage.jsx";
+import GamePlot from "./GamePlot.jsx";
 import { CommunityProvider } from './contexts/CommunityContext.jsx';
+import { SavedPostsProvider } from "./contexts/SavedPostsContext.jsx";
 
 const AppContent = () => {
   const location = useLocation();
@@ -26,10 +29,13 @@ const AppContent = () => {
             <Route path="/pages" element={<Pages />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/communities" element={<CommunityPage />} />
-            <Route path="/page/:slug" element={<GamePage />} />
+              <Route path="/page/:slug" element={<GamePage />}>
+                <Route path="plot" element={<GamePlot />} />
+              </Route>
           </Route>
-
           
+
+          <Route path="/saved" element={<SavedPostsPage />} />
 
       </Routes>
     </>
@@ -39,7 +45,9 @@ const AppContent = () => {
 const App = () => (
   <BrowserRouter>
   <CommunityProvider>
-    <AppContent />
+  <SavedPostsProvider>
+      <AppContent />
+  </SavedPostsProvider>
   </CommunityProvider>
   </BrowserRouter>
 );

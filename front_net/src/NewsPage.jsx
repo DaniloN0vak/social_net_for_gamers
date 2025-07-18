@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import PostCard from './PostCard';
 import './index.css'; 
-import video1 from './assets/IMG_6791.MP4';
+import video1 from './assets/IMG_1067.MP4';
 import { useEffect, useState } from 'react';
 import api from './api/api.js';
 
@@ -30,21 +30,21 @@ const newsPosts = [
     stats: { likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }
   },
   {
-    username: "Русланчік",
+    username: "TELEMART",
     dateTime: "2026-06-04 13:00",
-    text: "Це мій перший пост на цій платформі!",
+    text: "Клава з бетону... Техноблогер з США зробив клавіатуру з бетону. Батя сказав, що такій клавіатурі зносу не буде і тепер це точно одна і на все життя ",
     tags: ['News', 'пост', 'привіт'],
     videos: [video1],
     stats: { likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }
   },
   {
-    avatar: "https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-21_00-33-25.jpg?updatedAt=1750455218875",
-    username: "Папмпкін",
+    avatar: "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/b8b2320379b1157e8b7e84cea718dfdc3631d0e7.png?updatedAt=1752796919557",
+    username: "crypto_industry",
     dateTime: "2025-06-18 13:00",
-    text: "За 2 роки продано три мільйони копій Lies of P! До весни 2025 року гра була доступна і за підпискою GamePass. А також хороші новини для гравців на ПК: гра стала безкоштовною для всіх власників підписки Game Pass.",
-    tags: ['News', 'Lies_of_P', 'продажа'],
+    text: "Тим часом біткоін… Є хто купив по 16 000$?",
+    tags: ['News', 'Offtop', 'продажа'],
     images: [
-      "https://ik.imagekit.io/ufzr7vwbk/photo_2025-06-21_00-30-49.jpg?updatedAt=1750455151001"
+      "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/image.png?updatedAt=1752825167955"
     ],
     stats: { likes: 1200, comments: 300, views: 5000, shares: 150, saves: 80 }
   },

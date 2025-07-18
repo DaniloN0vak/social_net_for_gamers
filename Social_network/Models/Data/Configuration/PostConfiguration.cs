@@ -12,36 +12,45 @@ namespace Social_network.Models.Data.Configuration
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Content)
+            builder.Property(x => x.Avatar)
+                .IsRequired()
+                .HasMaxLength(300);
+
+            builder.Property(x => x.Username)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            builder.Property(x => x.Text)
                 .IsRequired();
 
             builder.Property(x => x.ImageUrl)
-                .HasMaxLength(255);
-
-            builder.Property(x => x.Language)
-                .HasMaxLength(10);
-
-            builder.Property(x => x.IsCommunityPost)
-                .IsRequired()
-                .HasDefaultValue(false);
+                .HasMaxLength(500);
 
             builder.Property(x => x.CreatedAt)
-                .IsRequired();
+                .IsRequired()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
-            builder.HasOne(x => x.AuthorUser)
-                .WithMany(u => u.Posts)
-                .HasForeignKey(x => x.AuthorUserId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.Likes).HasDefaultValue(0);
+            builder.Property(x => x.Comments).HasDefaultValue(0);
+            builder.Property(x => x.Views).HasDefaultValue(0);
+            builder.Property(x => x.Shares).HasDefaultValue(0);
+            builder.Property(x => x.Saves).HasDefaultValue(0);
 
-            builder.HasOne(x => x.AuthorCommunity)
-                .WithMany(u => u.Posts)
-                .HasForeignKey(x => x.AuthorCommunityId)
-                .OnDelete(DeleteBehavior.Restrict);
-
+            
             builder.HasOne(x => x.ReplyToPost)
-                .WithMany(u => u.Posts)
-                .HasForeignKey(x => x.ReplyToPostId)
+                .WithMany(x => x.Posts)
+                .HasForeignKey("ReplyToPostId")
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasMany(x => x.Media)
+                .WithOne(m => m.Post)
+                .HasForeignKey(m => m.PostId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.PostTags)
+                .WithOne()
+                .HasForeignKey("PostId")
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -18,7 +18,8 @@ string conn = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDBContext>(
     options => options.UseMySql(
         conn,
-        new MySqlServerVersion(new Version(8, 0, 36))
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection")),
+         mySqlOptions => mySqlOptions.EnableRetryOnFailure()
         ));
 
 builder.Services.AddCors(options =>

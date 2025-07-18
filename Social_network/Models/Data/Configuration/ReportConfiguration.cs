@@ -38,11 +38,6 @@ namespace Social_network.Models.Data.Configuration
                 .WithMany(u => u.ReportsAgainst)
                 .HasForeignKey(x => x.ReportedUserId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            builder.HasOne(x => x.ReportedPost)
-                .WithMany(u => u.Reports)
-                .HasForeignKey(x => x.ReportedPostId)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

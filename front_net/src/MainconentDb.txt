@@ -1,0 +1,62 @@
+import React, { useEffect, useState } from 'react';
+import PostCard from './PostCard';
+import './index.css';
+
+const MainContent = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('http://localhost:5065/api/posts', 'http://localhost:5065/api/users');
+        const data = await res.json();
+        setPosts(data);
+      } catch (err) {
+        console.error('Помилка при завантаженні постів:', err);
+      }
+    };
+    fetchPosts();
+  }, []);
+
+  return (
+    <div style={{
+      display: 'flex',
+      minHeight: 'calc(100vh - 64px)',
+      background: '#23272f'
+    }}>
+      <main style={{
+        flex: 1,
+        padding: 40,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        color: '#fff'
+      }}>
+        <div style={{
+          marginTop: 32,
+          background: '#23272f',
+          borderRadius: 16,
+          padding: 32,
+          minWidth: 400,
+          textAlign: 'center'
+        }}>
+          {posts.map((post) => (
+            <PostCard
+              key={post.id}
+              avatar={user.avatarurl}
+              username={user.lastname}
+              dateTime={new Date(post.dateTime).toLocaleString()}
+              text={post.text}
+              tags={post.tags}
+              images={post.images}
+              videos={post.videos}
+              stats={post.stats}
+            />
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default MainContent;

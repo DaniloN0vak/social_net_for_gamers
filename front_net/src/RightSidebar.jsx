@@ -30,9 +30,11 @@ const RightSidebar = () => {
         <button className='button-cmt'>
             <ContactsIcon />
         </button>
-        <button className='button-cmt'>
+        <Link to="/saved">
+          <button className='button-cmt'>
             <SavedIcon />
-        </button>
+          </button>
+        </Link>
         <button className='button-cmt'>
             <StoreIcon />
         </button>

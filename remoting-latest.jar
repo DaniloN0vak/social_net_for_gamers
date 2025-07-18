@@ -1,0 +1,6 @@
+{
+  "errors" : [ {
+    "status" : 404,
+    "message" : "Could not find resource; Path: 'public:org/jenkins-ci/main/remoting/latest/remoting-latest.jar'"
+  } ]
+}

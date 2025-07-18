@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-
+import { useSavedPosts } from "./contexts/SavedPostsContext.jsx";
 
 
 const PostCard = ({
+  id,
   username,
   dateTime,
   text,
@@ -13,9 +14,20 @@ const PostCard = ({
   stats: { likes, comments, views, shares, saves },
   avatar
 }) => {
+    const { isSaved, savePost, unsavePost } = useSavedPosts();
     const [modalImg, setModalImg] = useState(null);
     const [liked, setLiked] = useState(false);
     const [saved, setSaved] = useState(false);
+    const [likesCount, setLikesCount] = useState(likes);
+    const [savesCount, setSavesCount] = useState(saves);
+
+    const handleSave = () => {
+      if (isSaved(id)) {
+        unsavePost(id);
+      } else {
+        savePost(id);
+      }
+    };
 
     return (
     <div
@@ -184,7 +196,9 @@ const PostCard = ({
           <button
             className="flex items-center gap-1 raleway-font text-[14px]"
             style={{ color:'#BBBBBE', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-            onClick={() => setLiked(l => !l)}
+            onClick={() => {setLiked(l => !l);
+              setLikesCount(c => liked ? c - 1 : c + 1);
+            }}
           >
             <svg width="18" height="18" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -196,7 +210,7 @@ const PostCard = ({
                 strokeLinejoin="round"
               />
             </svg>
-            {likes.toLocaleString()}
+            {likesCount.toLocaleString()}
           </button>
           {/* Comment */}
           <button
@@ -228,19 +242,22 @@ const PostCard = ({
           <button
             className="flex items-center gap-1 raleway-font text-[14px]"
             style={{ color: '#BBBBBE', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-            onClick={() => setSaved(s => !s)}
+            onClick={() => {setSaved(s => !s);
+              setSavesCount(c => saved ? c - 1 : c + 1);
+              handleSave();
+            }}
           >
             <svg width="15" height="20" viewBox="0 0 17 23" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M1 4.82568C1 3.48669 1 2.8172 1.2725 2.30551C1.51218 1.85563 1.89462 1.48986 2.365 1.26062C2.9 1 3.6 1 5 1H12C13.4 1 14.1 1 14.635 1.26062C15.1054 1.48986 15.4878 1.85563 15.7275 2.30551C16 2.8172 16 3.48669 16 4.82568V20.7321C16 21.3131 16 21.6037 15.8738 21.7627C15.8192 21.8318 15.7496 21.8888 15.6697 21.9297C15.5899 21.9706 15.5017 21.9943 15.4112 21.9994C15.2025 22.0113 14.95 21.8499 14.445 21.5283L8.5 17.7373L2.555 21.5271C2.05 21.8499 1.7975 22.0113 1.5875 21.9994C1.49729 21.9942 1.40935 21.9703 1.32972 21.9294C1.25009 21.8886 1.18067 21.8317 1.12625 21.7627C1 21.6037 1 21.3131 1 20.7321V4.82568Z"
-                fill={saved ? '#1AAAF5' : '#BBBBBE'}
-                stroke={saved ? '#5a7ad1' : '#BBBBBE'}
+                fill={isSaved(id) ? '#1AAAF5' : '#BBBBBE'}
+                stroke={isSaved(id) ? '#5a7ad1' : '#BBBBBE'}
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
-            {saves.toLocaleString()}
+            {savesCount.toLocaleString()}
           </button>
         </div>
       </div>

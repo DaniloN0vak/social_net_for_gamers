@@ -3,30 +3,28 @@
     public class Post
     {
         public long Id { get; set; }
-        public string Content { get; set; }
+        public string Avatar { get; set; }
+        public string Username { get; set; }
+        public string Text { get; set; }
         public string? ImageUrl { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public bool IsCommunityPost { get; set; }
-        public string? Language { get; set; }
         public int? AuthorUserId { get; set; }
         public User? AuthorUser { get; set; }
-        public int? AuthorCommunityId { get; set; }
-        public Community? AuthorCommunity { get; set; }
-        public long? ReplyToPostId { get; set; }
         public Post? ReplyToPost { get; set; }
         public virtual List<Post> Posts { get; set; }
-        public virtual List<Report> Reports { get; set; }
         public virtual List<PostTag> PostTags { get; set; }
         public virtual List<PostMedia> Media { get; set; } = new();
+
+        public int Likes { get; set; } = 0;
+        public int Comments { get; set; } = 0; 
+        public int Views { get; set; } = 0;
+        public int Shares { get; set; } = 0;
+        public int Saves { get; set; } = 0;
 
         public Post()
         {
             CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
-            IsCommunityPost = false;
             Posts = new List<Post>();
-            Reports = new List<Report>();
             PostTags = new List<PostTag>();
         }
     }

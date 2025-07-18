@@ -17,11 +17,8 @@ namespace Social_network.Models.Data.Configuration
             builder.Property(x => x.AvatarUrl)
                 .HasMaxLength(255);
 
-            builder.Property(x => x.Firstname)
-                .HasMaxLength(255);
-
-            builder.Property(x => x.Lastname)
-                .HasMaxLength(255);
+            builder.Property(x => x.Username)
+                .HasMaxLength(64);
 
             builder.Property(x => x.Email)
                 .IsRequired()

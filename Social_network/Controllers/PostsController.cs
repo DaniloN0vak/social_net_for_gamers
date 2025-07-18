@@ -17,6 +17,31 @@ namespace Social_network.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetPosts()
+        {
+            var posts = await _context.Posts
+                .Include(p => p.Username)
+                .Include(p => p.PostTags)
+                .Include(p => p.Media)
+                .OrderByDescending(p => p.CreatedAt)
+                .ToListAsync();
+
+            var result = posts.Select(p => new {
+                id = p.Id,
+                text = p.Text,
+                dateTime = p.CreatedAt,
+                username = p.Username,
+                avatar = p.Avatar,
+                tags = p.PostTags.Select(t => t.Tag.Name).ToList(),
+                images = p.Media.Where(m => m.Type == "image").Select(m => m.Url).ToList(),
+                videos = p.Media.Where(m => m.Type == "video").Select(m => m.Url).ToList(),
+                stats = new { likes = 0, comments = 0, views = 0, shares = 0, saves = 0 }
+            });
+
+            return Ok(result);
+        }
+
         // POST: api/Post
         [HttpPost]
         public async Task<IActionResult> CreatePost([FromBody] CreatePostDto postDto)
@@ -26,7 +51,7 @@ namespace Social_network.Controllers
 
             var newPost = new Post
             {
-                Content = postDto.Content,
+                Text = postDto.Content,
                 CreatedAt = DateTime.UtcNow,
                 Id = postDto.UserId,
                 Media = postDto.Media.Select(m => new PostMedia

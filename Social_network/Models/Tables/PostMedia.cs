@@ -2,11 +2,11 @@
 {
     public class PostMedia
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
+        public long PostId { get; set; }
         public string Url { get; set; } = string.Empty;
-        public string Type { get; set; } = "image"; 
+        public string Type { get; set; }
         public double Size { get; set; }
-        public int PostId { get; set; }
         public Post Post { get; set; } = null!;
     }
 }
