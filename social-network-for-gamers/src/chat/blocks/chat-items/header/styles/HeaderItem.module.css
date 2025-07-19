@@ -1,0 +1,95 @@
+.headerItem {
+  height: 100px;
+  background-color: #212124;
+  display: flex;
+  flex-direction: row;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  width: 75.26%;
+  transition: margin-top 0.3s ease-in-out;
+}
+
+
+.visible {
+  margin-top: 100px;
+}
+
+.info {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.descr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: auto 0;
+}
+
+.name {
+  color: #F6F6F6;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.event {
+  color: #ADADBD;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.images {
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.images img {
+  cursor: pointer;
+}
+
+.btnAttach {
+  width: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-self: flex-end;
+  padding-bottom: 10px;
+}
+
+.btnAttach :global(img) {
+  filter: grayscale(100%) brightness(0);
+  transition: filter 0.1s ease;
+
+}
+
+.btnAttach :global(img):hover {
+  filter: grayscale(0) brightness(100%);
+
+}

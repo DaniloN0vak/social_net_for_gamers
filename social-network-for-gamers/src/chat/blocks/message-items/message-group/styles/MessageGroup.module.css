@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: column;    
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20%;
+}
+
+.mainLeft {
+    align-items: flex-start;
+}
+
+.mainRight {
+    align-items: flex-end;
+    padding-right: calc(20% - 4px);
+}

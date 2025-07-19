@@ -1,0 +1,29 @@
+.container {
+    background-color: var(--back-color);
+    width: 415px;
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    height: 300px;
+    --height: 300px;
+    border-radius: 20px;
+}
+
+.wrapper {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.containerInFileArea {
+    background-color: var(--back-color);
+    width: 415px;
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    height: 200px;
+    --height: 200px !important;
+    border-radius: 20px;
+}

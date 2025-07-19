@@ -1,0 +1,29 @@
+.btn {
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.container {
+  display: flex;
+  user-select: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.canvas {
+  vertical-align: middle;
+  cursor: pointer;
+  height: 25px;
+}
+
+.canvasContainer {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.leftContainer {
+  flex-direction: row-reverse;
+}
