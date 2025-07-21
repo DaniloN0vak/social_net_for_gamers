@@ -22,12 +22,28 @@ const PostCard = ({
     const [savesCount, setSavesCount] = useState(saves);
 
     const handleSave = () => {
-      if (isSaved(id)) {
-        unsavePost(id);
-      } else {
-        savePost(id);
-      }
-    };
+  if (isSaved(id)) {
+    unsavePost(id);
+  } else {
+    savePost({
+      id,
+      username,
+      dateTime,
+      text,
+      tags,
+      images,
+      videos,
+      stats: {
+        likes,
+        comments,
+        views,
+        shares,
+        saves,
+      },
+      avatar
+    });
+  }
+};
 
     return (
     <div

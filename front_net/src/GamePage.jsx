@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, NavLink, Outlet} from 'react-router-dom';
 import PostCard from "./PostCard";
 import './index.css';
 
@@ -12,38 +12,20 @@ const navLinks = [
 ];
 
 const GamePage = () => {
-  const samplePosts = [
-    {
-      id: 1,
-      username: "Rockstar Games",
-      dateTime: "2025-06-04 12:00",
-      text: "Evade Enemy Fire in the  New Dodge a Bullet Twist  on Head for the Hills...  ",
-      tags: ["RDR", "Update"],
-      images: ['https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/2a23ea1510b6187735ca80c51998265f4e2925c5.jpg?updatedAt=1752822814749'],
-      videos: [],
-      stats: { likes: 1321, comments: 45, views: 4315, shares: 89, saves: 151 },
-      avatar: "https://ik.imagekit.io/ufzr7vwbk/channels4_profile.jpg?updatedAt=1750251355442"
-    },
-    {
-      id: 2,
-      username: "Silent Eye",
-      dateTime: "2025-04-06 14:30",
-      text: "The Elder Scrolls IV: Oblivion - Remastered | Офіційний анонс",
-      tags: ["сюжет", "шок"],
-      images: ["https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/faddfc37b95fcb72a098e843e70c5102343fcf71.png?updatedAt=1752823130303",
-        "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/859edb5211d8105f0a027ece7a42d305faf98f78.png?updatedAt=1752823130581",
-        "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/5c528c2db26412a272b8cdd72654d443a43b2c3f.png?updatedAt=1752823131236"
-      ],
-      videos: [],
-      stats: { likes: 12516, comments: 0, views: 91401, shares: 2731, saves: 819 },
-      avatar: "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/image%20(1).png?updatedAt=1752332379325"
-    }
-  ];
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const { slug } = useParams();
   const [game, setGame] = useState(null);
   const [search, setSearch] = useState('');
+   const handleClick = () => {
+    setIsFollowing(!isFollowing);
+    setShowModal(true);
 
+    setTimeout(() => {
+      setShowModal(false);
+    }, 1500);
+  };
   useEffect(() => {
     const fetchGame = async () => {
       try {
@@ -131,11 +113,20 @@ const GamePage = () => {
             <span className="text-base opacity-80 mb-1">
               <b>IGN:</b> {game.ignRating}
             </span>
-            <button
-              className="mt-6 px-20 py-4 bg-white hover:bg-blue-700 text-black rounded-lg font-semibold text-lg transition"
-            >
-              Слідкувати
-            </button>
+             <button
+                onClick={handleClick}
+                className={`mt-6 px-20 py-4 rounded-lg font-semibold text-lg transition
+                ${isFollowing ? 'bg-black text-white hover:bg-gray-800' : 'bg-white text-black hover:bg-blue-700'}`}>
+        {isFollowing ? 'Відписатись' : 'Слідкувати'}
+      </button>
+
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-black text-center">
+            Ви {isFollowing ? 'успішно підписались!' : 'відписались.'}
+          </div>
+        </div>
+      )}
           </div>
         </div>
       </div>
@@ -154,6 +145,7 @@ const GamePage = () => {
             <NavLink
               key={link.key}
               to={`/page/${slug}/${link.key}`}
+              end={link.key === ''}
               style={({ isActive }) => ({
                 background: 'none',
                 border: 'none',
@@ -169,6 +161,7 @@ const GamePage = () => {
               })}
               onMouseOver={e => (e.currentTarget.style.color = '#1AAAF5')}
               onMouseOut={e => (e.currentTarget.style.color = '')}
+              
             >
               {link.label}
             </NavLink>
@@ -213,10 +206,6 @@ const GamePage = () => {
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
         </div>
-      </div>
-
-      <div className="space-y-6 bg-[#1c1e22] font-raleway p-8 text-white">
-      {samplePosts.map(post => <PostCard key={post.id} {...post} />)}
       </div>
 
       <div className="p-16 text-white bg-[#1c1e22] min-h-[40vh]">

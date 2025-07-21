@@ -36,9 +36,6 @@ const RightSidebar = () => {
           </button>
         </Link>
         <button className='button-cmt'>
-            <StoreIcon />
-        </button>
-        <button className='button-cmt'>
             <NotificationIcon />
         </button>
     </div>

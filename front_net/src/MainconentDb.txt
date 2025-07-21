@@ -8,7 +8,7 @@ const MainContent = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch('http://localhost:5065/api/posts', 'http://localhost:5065/api/users');
+        const res = await fetch('http://localhost:5065/api/posts');
         const data = await res.json();
         setPosts(data);
       } catch (err) {
@@ -43,14 +43,15 @@ const MainContent = () => {
           {posts.map((post) => (
             <PostCard
               key={post.id}
-              avatar={user.avatarurl}
-              username={user.lastname}
+              id={post.id}
+              avatar={post.avatar || "https://ik.imagekit.io/ufzr7vwbk/For%20social%20net/photo_2023-05-30_17-56-12.jpg?updatedAt=1752765590040"}
+              username={post.username || "Користувач"}
               dateTime={new Date(post.dateTime).toLocaleString()}
               text={post.text}
               tags={post.tags}
               images={post.images}
               videos={post.videos}
-              stats={post.stats}
+              stats={post.stats || { likes: 0, comments: 0, views: 0, shares: 0, saves: 0 }}
             />
           ))}
         </div>

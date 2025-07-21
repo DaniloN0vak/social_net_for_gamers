@@ -10,8 +10,12 @@ import CommunityPage from "./CommunityPage.jsx";
 import GamePage from "./GamePage.jsx";
 import SavedPostsPage from "./SavedPostsPage.jsx";
 import GamePlot from "./GamePlot.jsx";
+import GameInfo from "./GameInfo.jsx";
+import GameHardware from "./GameHardware.jsx";
+import GameCommunity from "./GameCommunity.jsx";
 import { CommunityProvider } from './contexts/CommunityContext.jsx';
 import { SavedPostsProvider } from "./contexts/SavedPostsContext.jsx";
+import GameMain from './GameMain.jsx';
 
 const AppContent = () => {
   const location = useLocation();
@@ -28,14 +32,19 @@ const AppContent = () => {
             <Route path="/followed" element={<FollowedPage />} />
             <Route path="/pages" element={<Pages />} />
             <Route path="/news" element={<NewsPage />} />
+            <Route path="/saved" element={<SavedPostsPage />} />
             <Route path="/communities" element={<CommunityPage />} />
               <Route path="/page/:slug" element={<GamePage />}>
+                <Route index element={<GameMain />} />
                 <Route path="plot" element={<GamePlot />} />
+                <Route path="info" element={<GameInfo />} />
+                <Route path="hardware" element={<GameHardware />} />
+                <Route path="community" element={<GameCommunity />} />
               </Route>
           </Route>
           
 
-          <Route path="/saved" element={<SavedPostsPage />} />
+          
 
       </Routes>
     </>

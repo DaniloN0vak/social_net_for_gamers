@@ -5,14 +5,24 @@ const SavedPostsContext = createContext();
 export const useSavedPosts = () => useContext(SavedPostsContext);
 
 export const SavedPostsProvider = ({ children }) => {
-  const [savedIds, setSavedIds] = useState([]);
+  const [savedPosts, setSavedPosts] = useState([]);
 
-  const savePost = (id) => setSavedIds(ids => ids.includes(id) ? ids : [...ids, id]);
-  const unsavePost = (id) => setSavedIds(ids => ids.filter(_id => _id !== id));
-  const isSaved = (id) => savedIds.includes(id);
+  const savePost = (post) => {
+    setSavedPosts((posts) =>
+      posts.some((p) => p.id === post.id) ? posts : [...posts, post]
+    );
+  };
+
+  const unsavePost = (id) => {
+    setSavedPosts((posts) => posts.filter((p) => p.id !== id));
+  };
+
+  const isSaved = (id) => savedPosts.some((p) => p.id === id);
 
   return (
-    <SavedPostsContext.Provider value={{ savedIds, savePost, unsavePost, isSaved }}>
+    <SavedPostsContext.Provider
+      value={{ savedPosts, savePost, unsavePost, isSaved }}
+    >
       {children}
     </SavedPostsContext.Provider>
   );
