@@ -3,6 +3,7 @@ using SocialNetworkForGamers.Models.DatabaseModels.Tables;
 using SocialNetworkForGamers.Models.DatabaseModels.Data.Configuration;
 using SocialNetworkForGamers.Models.DatabaseModels.Tables;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using SocialNetworkForGamers.Models.DatabaseModels.Data.Configuration;
 
 namespace SocialNetworkForGamers.Models.DatabaseModels.Data
 {
@@ -40,8 +41,9 @@ namespace SocialNetworkForGamers.Models.DatabaseModels.Data
         public DbSet<UserState> UsersStates { get; set; }
         public DbSet<ChatUser> ChatUsers { get; set; }
         public DbSet<BackgroundImage> BackgroundImages { get; set; }
+        public DbSet<Game> Games { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {}
+        { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -79,6 +81,7 @@ namespace SocialNetworkForGamers.Models.DatabaseModels.Data
             modelBuilder.ApplyConfiguration(new ChatUserConfiguration());
             modelBuilder.ApplyConfiguration(new UserStateConfiguration());
             modelBuilder.ApplyConfiguration(new BackgroundImageConfiguration());
+            modelBuilder.ApplyConfiguration(new GameConfiguration());
         }
     }
 }
