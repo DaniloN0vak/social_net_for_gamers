@@ -1,6 +1,5 @@
 import React from 'react';
 import PostCard from './PostCard';
-import CreatePost from './CreatePost.jsx';
 import './index.css';
 
 
@@ -32,7 +31,7 @@ const MainContent = () => (
                 <PostCard
                     id="2"
                     avatar = "https://m.media-amazon.com/images/I/816L0BCqroL.jpg"
-                    username="Pumpkin"
+                    username="PumpkinW"
                     dateTime="2025-06-04 13:00"
                     text="Це мій перший пост на цій платформі! Зацініть які маю досягнення, в майнкрафті"
                     tags={['перший', 'пост', 'привіт']}

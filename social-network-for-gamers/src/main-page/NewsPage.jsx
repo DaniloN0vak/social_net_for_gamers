@@ -3,8 +3,6 @@ import PostCard from './PostCard';
 import './index.css'; 
 import video1 from './assets/IMG_1067.MP4';
 import { useEffect, useState } from 'react';
-import api from './api/api.js';
-
 
 const newsPosts = [
   {
@@ -56,9 +54,6 @@ export default function NewsPage() {
   const right = newsPosts.filter((_, i) => i % 2 !== 0);
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    api.get('/posts').then((res) => setPosts(res.data));
-  }, []);
 
   return (
     <div>

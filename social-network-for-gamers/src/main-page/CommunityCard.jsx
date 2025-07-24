@@ -19,35 +19,29 @@ const CommunityCard = ({ banner, avatar, title, description, membersCount }) => 
   };
 
   return (
-    <div className="raleway-font flex flex-col items-center">
-      <div
-        className="relative rounded-xl p-4 shadow-sm mb-18 overflow-hidden hover:shadow-lg transition flex items-center"
-        style={{ width: 1140, height: 250 }}
-      >
+    <div className="community-card-container raleway-font">
+      <div className="community-card raleway-font">
         {banner && (
           <img
             src={banner}
             alt="Community Banner"
-            className="absolute inset-0 w-full h-full object-cover rounded-xl pointer-events-none"
+            className="community-banner"
           />
         )}
-        <div className="relative ml-10 z-10 flex items-center gap-4 w-full">
+        <div className="community-content">
           <img
             src={avatar}
             alt="Group Avatar"
-            className="w-40 h-40 rounded-lg object-cover"
+            className="community-avatar"
           />
-          <div className="raleway-font flex-1 space-y-4">
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="text-base">{description}</p>
-            <p className="text-sm mt-1">Учасників: {members}</p>
+          <div className="community-text raleway-font">
+            <h3 className="community-title raleway-font">{title}</h3>
+            <p className="community-description raleway-font">{description}</p>
+            <p className="community-members raleway-font">Учасників: {members}</p>
           </div>
           <button
             onClick={handleToggle}
-            className={`raleway-font px-6 py-3 rounded-md transition text-base ${
-              isJoined ? 'bg-gray-900 text-white' : 'bg-gray-300 text-gray-700'
-            }`}
-            style={{ marginRight: '52px' }}
+            className={`community-button raleway-font ${isJoined ? 'leave' : 'join'}`}
           >
             {isJoined ? 'Покинути' : 'Приєднатися'}
           </button>

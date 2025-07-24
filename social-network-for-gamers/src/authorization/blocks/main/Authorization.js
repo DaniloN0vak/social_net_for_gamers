@@ -74,7 +74,7 @@ export default React.memo(function Authorization({ isResetMode = false }) {
         const token = await userAuthorization(email, password);
         if (typeof token === "string") {
             sessionStorage.setItem("token", token);
-            // navigate('/chat/1');
+            navigate('/main-page');
         }
         else return 1;
     };

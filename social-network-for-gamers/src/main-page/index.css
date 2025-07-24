@@ -1,5 +1,483 @@
- @import "tailwindcss";
- 
+
+/* PostCard Container */
+.post-card {
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin-right: 12px;
+  background: #e0e0e0;
+}
+.post-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: #ccc;
+  margin-right: 12px;
+}
+.post-username {
+  font-weight: bold;
+  text-align: left;
+}
+.post-date {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Text */
+.post-text {
+  color: #ddd;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+/* Tags */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.tag {
+  background-color: #1e1e2e;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+}
+
+/* Grid layouts for images */
+.grid-3-images {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 10px;
+  height: 600px;
+}
+.grid-3-images img:nth-child(1) {
+  grid-row: 1 / span 2;
+  height: 600px;
+}
+.grid-3-images img:nth-child(2),
+.grid-3-images img:nth-child(3) {
+  height: 290px;
+}
+.grid-1 img,
+.grid-2 img {
+  height: 600px;
+}
+.grid-2,
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.grid-4 {
+  grid-template-rows: 1fr 1fr;
+}
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.img-1,
+.img-2,
+.img-4 {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  height: 290px;
+}
+
+/* Videos */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.video-player {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: black;
+}
+
+/* Stats */
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #BBBBBE;
+  font-size: 14px;
+  margin-top: 16px;
+}
+.stats-left {
+  display: flex;
+  gap: 16px;
+}
+.stat-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #BBBBBE;
+}
+
+/* Modal */
+.modal-img-backdrop {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 32, 40, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Page layout */
+.community-page {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  background: #23272f;
+}
+
+.community-main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.community-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Card Container */
+.community-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.community-list {
+  width: 100%;
+  max-width: 1140px;
+}
+
+/* Card */
+.community-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.community-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Banner */
+.community-banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* Content */
+.community-content {
+  position: relative;
+  z-index: 10;
+  margin-left: 40px;
+  margin-right: 52px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+/* Avatar */
+.community-avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Text */
+.community-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: white;
+}
+
+.community-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.community-description {
+  font-size: 16px;
+}
+
+.community-members {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Button */
+.community-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border: none;
+}
+
+.community-button.join {
+  background-color: #e2e8f0;
+  color: #1a202c;
+}
+
+.community-button.leave {
+  background-color: #1a202c;
+  color: white;
+}
+
+
+/* Pages.css */
+.pages-wrapper {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  background: #23272f;
+}
+.pages-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.page-card-link {
+  text-decoration: none;
+}
+.page-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.page-card-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.page-card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page-card-logo {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90px;
+  z-index: 2;
+}
+.page-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(0deg, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.0) 100%);
+  color: white;
+}
+.page-card-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.page-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* GamePage.css */
+.gamepage-wrapper {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+.gamepage-banner {
+  width: 100%;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 64px 0;
+}
+.gamepage-content {
+  padding-top: 64px;
+  padding-left: 96px;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+}
+.gamepage-logo {
+  width: 350px;
+  height: 135px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+.gamepage-meta span {
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+.official-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #1AAAF5;
+  font-weight: bold;
+  font-size: 12px;
+}
+.btn-follow,
+.btn-unfollow {
+  margin-top: 12px;
+  padding: 12px 40px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-follow {
+  background: white;
+  color: black;
+}
+.btn-follow:hover {
+  background: #1AAAF5;
+  color: white;
+}
+.btn-unfollow {
+  background: black;
+  color: white;
+}
+.btn-unfollow:hover {
+  background: #444;
+}
+.follow-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.follow-modal > div {
+  background: white;
+  color: black;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+.gamepage-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 64px;
+  background: #23272f;
+}
+.gamepage-nav nav a {
+  color: white;
+  margin-right: 24px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.gamepage-nav nav a.nav-active {
+  color: #1AAAF5;
+  font-weight: bold;
+}
+.search-container {
+  position: relative;
+}
+.search-container input {
+  width: 250px;
+  padding: 8px 12px;
+  border-radius: 24px;
+  border: 1px solid #353a45;
+  background: #262629;
+  color: white;
+  outline: none;
+}
+.gamepage-body {
+  padding: 64px;
+  background: #1c1e22;
+  min-height: 40vh;
+}
+
+
  #search-bar {
       position: relative;
       width: 300px;
@@ -51,3 +529,4 @@
   font-weight: 450;
   font-style: normal;
 }
+ 

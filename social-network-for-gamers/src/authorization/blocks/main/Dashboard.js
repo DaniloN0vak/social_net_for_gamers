@@ -16,7 +16,7 @@ export default function Dashboard() {
     sessionStorage.setItem("token", token);
 
     
-    navigate("/authorization", { replace: true });
+    navigate("/main-page", { replace: true });
   }, [search, navigate]);
 
   return <div>Добро пожаловать! Ваш токен сохранён.</div>;

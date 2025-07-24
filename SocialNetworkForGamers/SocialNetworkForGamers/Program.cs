@@ -76,45 +76,45 @@ builder.Services.AddAuthentication(options =>
             return Task.CompletedTask;
         }
     };
-})
-.AddDiscord(discordOptions =>
-{
-    discordOptions.SignInScheme = IdentityConstants.ExternalScheme;
-    discordOptions.ClientId = configuration["Authentication:Discord:ClientId"]!;
-    discordOptions.ClientSecret = configuration["Authentication:Discord:ClientSecret"]!;
-    discordOptions.CallbackPath = "/api/authorization/external-login-callback/Discord";
-
-    discordOptions.Scope.Clear();
-    discordOptions.Scope.Add("identify");
-    discordOptions.Scope.Add("email");
-
-    discordOptions.Events = new OAuthEvents
-    {
-        OnTicketReceived = async ctx =>
-        {
-            var email = ctx.Principal.FindFirst(ClaimTypes.Email)?.Value;
-            var name = ctx.Principal.FindFirst(ClaimTypes.Name)?.Value ?? email;
-
-            Console.WriteLine("name: " + name + " email: " + email);
-
-            var svc = ctx.HttpContext.RequestServices.GetRequiredService<AuthorizationService>();
-            var jwt = await svc.ExternalLoginOrRegistration("Discord", name!, email!);
-
-            Console.WriteLine("jwt: " + jwt);
-
-            var returnUrl = ctx.Properties.Items["returnUrl"] ?? "/";
-            ctx.Response.Redirect($"{returnUrl}?token={jwt}");
-            ctx.HandleResponse();
-        },
-
-        OnRemoteFailure = ctx =>
-        {
-            ctx.Response.Redirect($"/error?message={UrlEncoder.Default.Encode(ctx.Failure.Message)}");
-            ctx.HandleResponse();
-            return Task.CompletedTask;
-        }
-    };
 });
+//.AddDiscord(discordOptions =>
+//{
+//    discordOptions.SignInScheme = IdentityConstants.ExternalScheme;
+//    discordOptions.ClientId = configuration["Authentication:Discord:ClientId"]!;
+//    discordOptions.ClientSecret = configuration["Authentication:Discord:ClientSecret"]!;
+//    discordOptions.CallbackPath = "/api/authorization/external-login-callback/Discord";
+
+//    discordOptions.Scope.Clear();
+//    discordOptions.Scope.Add("identify");
+//    discordOptions.Scope.Add("email");
+
+//    discordOptions.Events = new OAuthEvents
+//    {
+//        OnTicketReceived = async ctx =>
+//        {
+//            var email = ctx.Principal.FindFirst(ClaimTypes.Email)?.Value;
+//            var name = ctx.Principal.FindFirst(ClaimTypes.Name)?.Value ?? email;
+
+//            Console.WriteLine("name: " + name + " email: " + email);
+
+//            var svc = ctx.HttpContext.RequestServices.GetRequiredService<AuthorizationService>();
+//            var jwt = await svc.ExternalLoginOrRegistration("Discord", name!, email!);
+
+//            Console.WriteLine("jwt: " + jwt);
+
+//            var returnUrl = ctx.Properties.Items["returnUrl"] ?? "/";
+//            ctx.Response.Redirect($"{returnUrl}?token={jwt}");
+//            ctx.HandleResponse();
+//        },
+
+//        OnRemoteFailure = ctx =>
+//        {
+//            ctx.Response.Redirect($"/error?message={UrlEncoder.Default.Encode(ctx.Failure.Message)}");
+//            ctx.HandleResponse();
+//            return Task.CompletedTask;
+//        }
+//    };
+//});
 
 builder.Services.AddSignalR();
 

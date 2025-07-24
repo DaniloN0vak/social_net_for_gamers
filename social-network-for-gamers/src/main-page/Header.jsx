@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 
 const navLinks = [
-    { label: 'Головна', key: '/' },
-    { label: 'Відстежуванні', key: '/followed' },
-    { label: 'Сторінки', key: '/pages' },
-    { label: 'Новини', key: '/news' },
-    { label: 'Спільноти', key: '/communities' },
+    { label: 'Головна', key: '/main-page/' },
+    { label: 'Відстежуванні', key: '/main-page/followed' },
+    { label: 'Сторінки', key: '/main-page/pages' },
+    { label: 'Новини', key: '/main-page/news' },
+    { label: 'Спільноти', key: '/main-page/communities' },
 ];
 
 const Header = ({currentPath}) => {

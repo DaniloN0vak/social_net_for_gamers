@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import { useCommunity } from './contexts/CommunityContext';
 import CommunityCard from './CommunityCard';
 import './index.css';
@@ -35,17 +35,10 @@ export default function CommunityPage() {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: 'calc(100vh - 64px)', background: '#23272f' }}>
-      <main style={{
-        flex: 1,
-        padding: 40,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        color: '#fff'
-      }}>
-        <h1 className="raleway-font text-2xl font-bold mb-6">Спільноти</h1>
-        <div className="w-full max-w-md">
+    <div className="community-page raleway-font">
+      <main className="community-main raleway-font">
+        <h1 className="community-heading raleway-font">Спільноти</h1>
+        <div className="community-list raleway-font">
           {communities.map((community, index) => (
             <CommunityCard
               key={index}

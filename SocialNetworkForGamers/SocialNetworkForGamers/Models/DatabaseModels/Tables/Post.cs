@@ -28,6 +28,7 @@ namespace SocialNetworkForGamers.Models.DatabaseModels.Tables
             CreatedAt = DateTime.Now;
             Posts = new List<Post>();
             PostTags = new List<PostTag>();
+            CreatedAt = DateTime.UtcNow;
         }
     }
 }

@@ -40,9 +40,9 @@ const AppContent = () => {
 const App = () => (
   <BrowserRouter>
   <CommunityProvider>
-  <SavedPostsProvider>
+    <SavedPostsProvider>
       <AppContent />
-  </SavedPostsProvider>
+    </SavedPostsProvider>
   </CommunityProvider>
   </BrowserRouter>
 );

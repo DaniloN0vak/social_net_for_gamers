@@ -27,8 +27,7 @@ namespace SocialNetworkForGamers.Models.DatabaseModels.Data.Configuration
                 .HasMaxLength(500);
 
             builder.Property(x => x.CreatedAt)
-                .IsRequired()
-                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+                .IsRequired();
 
             builder.Property(x => x.Likes).HasDefaultValue(0);
             builder.Property(x => x.Comments).HasDefaultValue(0);
